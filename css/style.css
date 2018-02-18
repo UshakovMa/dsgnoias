@@ -78,6 +78,12 @@ a:hover{
     text-decoration: none;
 }
 
+.verificate{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     color: #343A40;

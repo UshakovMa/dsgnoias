@@ -11,14 +11,14 @@ $res = info_user($db,$_COOKIE[id]);
     <?php include "sp_bl/header.php";?>
   <br>
    <div class="container">
-       <div class="row no-gutters justify-content-around">
+       <div class="row no-gutters justify-content-between">
              <div class="col-12 col-md-3 bg-dark" style="border-radius: .3rem;"><br>
                     <img src="img/avatar.png" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
                     <a href="#" style="text-decoration: none" class="btn btn-dark btn-lg btn-block">Редактировать</a>
             </div>
               <div class="col-12 col-sm-12 col-md-8 bg-dark" style="border-radius: .3rem;">
                     <div class="alert text-white" role="alert">
-                          <strong><?php echo $res[login]; if($res[verificate] == 1){ echo "  <i style='color: #ffc107' class='fas fa-check'></i>";}?></strong>
+                          <strong><?php echo $res[login]; if($res[verificate] == 1){ echo "  <i class='fas fa-check verificate text-warning' data-toggle='popover' title='Эта страница официально подтверждена администрацией форума'></i>";}?></strong>
                           <span class="text-secondary" style="float: right"> <?php 
                             if($res['last_online'] > time() - 60*5){
                                 echo "Онлайн";
@@ -64,7 +64,7 @@ $res = info_user($db,$_COOKIE[id]);
                 </div>       
            </div><br>
            
-            <div class="lc-walls bg-dark">
+            <div class="lc-walls bg-dark col-12 col-md-12" style="border-radius: .3rem;">
                         <h5 class="text-secondary">-Последние ответы</h5>
                         <div class="d-flex">
                             <img src="img/avatar.png" class="img-circle" width="60" height="60" alt="">
