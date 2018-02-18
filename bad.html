@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Forum Get Bootstrap</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.gif" height="40" alt=""></a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="article.html">Статьи</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Маркет</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Гарант</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Прочее</a>
+              </li>
+            </ul>
+             <form class="form-inline">
+                <button class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" type="button">Войти <i class="fas fa-sign-in-alt"></i></button>&nbsp;
+                <button class="btn btn-outline-success" data-toggle="modal" data-target="#Modal1" type="button">Регистрация <i class="fa fa-user-circle" aria-hidden="true"></i></button>
+              </form>
+          </div>
+    </div>
+  </nav>
+  <br>
+   <div class="container">
+           <div class="bad text-center text-muted">
+               <i class="fas fa-exclamation-triangle"></i><h1>Ошибка</h1>
+           </div>
+            </div>
+       
+       
+       
+       
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="exampleModalLabel">Вход</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control bg-dark text-white" placeholder="Почта">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control bg-dark text-white" placeholder="Пароль">
+          </div>
+        </form>
+        <input type="checkbox">&nbsp;<span class="text-white">Запомнить меня</span><br>
+        <a href="#">Забыли пароль?</a>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target="#Modal1" data-dismiss="modal">Регистрация</button>
+        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Вход</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
+   <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="exampleModalLabel">Регистрация</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+         <div class="form-group">
+            <input type="email" class="form-control bg-dark text-white" placeholder="Логин">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control bg-dark text-white" placeholder="Почта">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control bg-dark text-white" placeholder="Пароль">
+          </div>
+        </form>
+        <input type="checkbox">&nbsp;<span class="text-white">Я соглагшаюсь с <a href="#" style="color:#FFC107;">правилами</a> форума</span>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-sm btn-outline-warning" data-toggle="modal" data-target="#exampleModal" data-dismiss="modal">Войти</button>
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Создать аккаунт</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

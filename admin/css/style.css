@@ -1,0 +1,308 @@
+body{
+    background-color: #222222;
+}
+.background{
+  -webkit-filter: blur(5px);
+     -moz-filter: blur(5px);
+       -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+          filter: blur(5px);
+}
+
+::-webkit-scrollbar-button { 
+width:6px; 
+height:0px 
+} 
+
+::-webkit-scrollbar-track { 
+background-color:#343A40; 
+} 
+
+::-webkit-scrollbar-thumb { 
+background-color:#FFC107;  
+background-position:center; 
+} 
+
+::-webkit-resizer{ 
+width:7px; 
+height:0px 
+} 
+
+::-webkit-scrollbar{ 
+width:5px; 
+}
+}
+
+.side-nav{
+  background-color: #009788;
+  color: #fff;
+}
+
+.side-nav > li > a {
+  color: #eee;
+}
+
+.side-nav li > a > i.material-icons{
+  color: #eee;
+}
+
+.left-menu {
+  position: fixed;
+  width: 300px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  padding-bottom: 60px;
+  background-color: #343A40;
+  z-index: 999;
+  overflow:  hidden;
+}
+
+.left-menu > .user-view > a > img {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+}
+
+.left-menu > .user-view > a > .white-text {
+  position: relative;
+  top: -55px;
+  left: 35px;
+}
+
+.left-menu > .user-view > a > .waves-effect{
+  position: relative;
+  top: -80px;
+  left: 150px;
+  background-color: #517299;
+}
+
+.exit{
+  position: relative;
+  top: -86px;
+  left: 240px;
+  background-color: #343A40;
+}
+
+.left-menu li {
+  float: none;
+  line-height: 48px;
+}
+
+.left-menu li.active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.left-menu li > a {
+  color: #eee;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 32px;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  user-select:none;
+  overflow:  hidden;
+}
+
+.left-menu li > a > i{
+  margin-right: 35px;
+}
+
+.left-menu li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.left-menu > footer{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+}
+    
+.right{
+  width: calc(100% - 300px);
+}
+
+.right > .navbar-fixed > nav{
+  background-color: #fff;
+}
+
+nav .brand-logo {
+  color: #757575;
+}
+
+.brand-logo > span{
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.paralax-container{
+  height: 400px;
+}
+
+.news-img{
+  width: 120px;
+  height: 100px;
+  float:left;
+  margin-bottom: 40px;
+  padding-right: 20px;
+}
+
+.info{
+  width: calc(100% - 120px);
+  margin-left: 135px;
+}
+
+.news-open-img{
+  width: 200px;
+  height: 200px;
+  float: right;
+  border: 1px solid silver;
+}
+
+.news-open-text{
+  width: 300px;
+  float: left;
+
+}
+
+.card-title{
+    -webkit-text-stroke: 1px rgba(0,0,0,0.87);
+    font-family: Impact;
+}
+
+.img-head-back{
+    position: absolute;
+    top: 70px;
+    width: calc(100% - 300px);
+    height: 400px;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.img-head-ava{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: 250px;
+    left: 50px;
+}
+
+.edit-btn-ava{
+    position: absolute;
+    top: 410px;
+    left: 425px;
+    border-radius: 50%;
+}
+.edit-btn-ava:hover{
+    background-color: rgba(38, 166, 154, 0.05);
+}
+
+.edit-btn-back{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    border-radius: 50%;
+}
+.edit-btn-back:hover{
+    background-color: rgba(38, 166, 154, 0.05);
+}
+
+.collapsible{
+    position: relative;
+    top: 250px;
+    width: 550px;
+    left: 50px;
+}
+
+.save{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.collection{
+    position: relative;
+    top: 250px;
+    width: 550px;
+    left: 50px;
+}
+
+
+
+/* Ноутбуки и т.д. */
+@media (max-width: 992px) {
+  .left-menu{
+    display: none;
+  }
+
+  .right{
+    width: 100%;
+  }
+
+  .exit{
+      position: relative;
+      top: -55px;
+      left: 230px;
+    }
+    .img-head-back{
+        width: 100%;
+    }
+    .edit-btn-ava{
+        left: 120px;
+    }
+}
+/* Планшеты */
+@media (max-width: 768px) {
+    .img-head-back{
+        width: 100%;
+    }
+    .edit-btn-ava{
+        left: 123px;
+    }
+    .collapsible{
+        width: 80%;
+        left: 50px;
+    }
+    .collection{
+        width: 80%;
+        left: 50px;
+    }
+
+}
+/* Смартфоны */
+@media (max-width: 480px) {
+    .edit-btn-ava{
+        top: 400px;
+    }
+    .edit-btn-back{
+        top: 70px;
+        left: 260px;
+    }
+    .collapsible{
+        width: 95%;
+        left: 10px;
+    }
+    .collection{
+        width: 95%;
+        left: 10px;
+    }
+    
+}
