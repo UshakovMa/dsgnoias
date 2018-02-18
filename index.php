@@ -23,7 +23,6 @@
             </div><br>
                    <?php include "sp_bl/bl_foot.php"?>
        </div>
-       <?php include "sp_bl/block_avto.php"?>
       <?php include "sp_bl/foter.php"?>
   </body>
 </html>

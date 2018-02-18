@@ -1,8 +1,17 @@
 <?php
     include "db/conn.php";
     include "check_acc/check.php";
-
-$res = info_user($db,$_COOKIE[id]);
+if($_GET[id] == null){
+    if($_COOKIE[id] == null){
+        header("Location: index.php");
+    }
+$res = info_user($db, $_COOKIE[id]);
+}else{
+    if($_GET[id] == $_COOKIE[id]){
+        header("Location: user.php");
+    }
+    $res = info_user($db,$_GET[id]);
+}
 ?>
 <!doctype html>
 <html lang="ru">
@@ -14,7 +23,7 @@ $res = info_user($db,$_COOKIE[id]);
        <div class="row no-gutters justify-content-between">
              <div class="col-12 col-md-3 bg-dark" style="border-radius: .3rem;"><br>
                     <img src="img/avatar.png" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
-                    <a href="#" style="text-decoration: none" class="btn btn-dark btn-lg btn-block">Редактировать</a>
+                    <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='#' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }?>
             </div>
               <div class="col-12 col-sm-12 col-md-8 bg-dark" style="border-radius: .3rem;">
                     <div class="alert text-white" role="alert">

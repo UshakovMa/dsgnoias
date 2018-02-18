@@ -79,7 +79,7 @@
                     <img src='img/avatar.png' class='img-circle' width='40' height='40' alt=''>
                   </a>
                   <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-                    <a class='dropdown-item bg-dark' href='lc.php'>Мой профиль</a>
+                    <a class='dropdown-item bg-dark' href='user.php'>Мой профиль</a>
                     <div class='dropdown-divider'></div>
                     <a class='dropdown-item bg-dark' href='#'>Мои темы</a>
                     <a class='dropdown-item bg-dark' href='#'>Мои сообщения</a>
