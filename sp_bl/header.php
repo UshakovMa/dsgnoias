@@ -29,7 +29,7 @@
     $name = get_name($_COOKIE[id], $db);
     echo "<form class='form-inline'>
                <div class='dropdown show'>
-                  <button class='btn btn-outline-warning dropdown-toggle' id='dropdowMSG' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-envelope'></i></button>&nbsp;
+                  <button class='btn bg-warning dropdown-toggle' style='box-shadow: none' id='dropdowMSG' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-envelope'></i><span class='badge badge-success notyfy text-white'>4</span></button>&nbsp;
                   <div class='dropdown-menu' aria-labelledby='dropdownUW'>
                     <h6 class='dropdown-header'>Сообщения:</h6>
                     <div class='dropdown-item align-items-left' href='#'>
@@ -49,7 +49,7 @@
                   </div>
                </div>
                <div class='dropdown show'>
-                   <button class='btn btn-outline-warning dropdown-toggle' id='dropdowUW' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-comment'></i></button>
+                   <button class='btn bg-warning dropdown-toggle' style='box-shadow: none' id='dropdowUW' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-comment'></i></button>
                    <div class='dropdown-menu' aria-labelledby='dropdownUW'>
                     <h6 class='dropdown-header'>Уведомления:</h6>
                     <div class='dropdown-item align-items-left' href='#'>
