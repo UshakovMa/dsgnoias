@@ -1,6 +1,13 @@
 <?php
 include "db/conn.php";
 include "check_acc/check.php";
+if($_GET[theme] != null && $_GET[category] == null){
+    $th = (int)$_GET[theme];
+    $query = get_post($db,$th);
+}
+if($_GET[theme] != null && $_GET[category] != null){
+    
+}
 ?>
 <!doctype html>
 <html lang="ru">
@@ -70,17 +77,27 @@ include "check_acc/check.php";
       <button type="button" class="btn btn-outline-success">Создать тему</button>
 </div><br>
    <ul class="list-group">
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
+        <?php 
+    if($query != ""){
+            while($rs = mysqli_fetch_assoc($query)){
+                $time = date('d.m.y, в H:i',$rs['date_create']);
+                $aut = get_name($rs[author],$db);
+                echo "<li class='list-group-item list-group-item-dark'>
+      <div class='open-cat-them fl'>
+          <a href='/post.php?id=$rs[id]'>$rs[title]</a><br>
+      <a href='#' class='open-cat-name text-danger'>Lendry,</a>&nbsp;<a href='#'>11 мар 2013,</a><span class='text-secondary'>&nbsp;3 296 ответов</span>
       </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
+      <div class='open-cat-user fr'>
+       <img src='img/avatar.png' class='rounded-circle' width='50' alt=''>
+        <a class='text-danger' href='/user.php?id=$rs[author]'>$aut</a>
+        <span class='text-secondary'>| $time</span>
       </div>
-      </li>
+      </li>";
+            }
+    }
+            
+       
+       ?>
       <li class="list-group-item list-group-item-dark">
       <div class="open-cat-them fl">
           <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>

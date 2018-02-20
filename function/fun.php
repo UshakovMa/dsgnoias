@@ -41,7 +41,7 @@ function views_all_theme($db){
         echo "        <div class='media bg-dark rounded'>
                       <img class='mr-3 img-categories' src='img/chat.png' width='70' style='padding-top: 25px;padding-left: 11px;'>
                       <div class='media-body'>
-                        <h5 class='mt-0'><a href='open-cat.php?theme=$res[id]'>$res[name]</a></h5>
+                        <h5 class='mt-0'><a href='category.php?theme=$res[id]'>$res[name]</a></h5>
                         <div class='categories'>
                         <div class='cat1' style='min-width:  150px;'>";
                             get_category($db,$res[id],"1,3");
@@ -62,7 +62,7 @@ function views_all_theme($db){
 function get_category($db,$th,$lim){
     $query = mysqli_query($db, "SELECT * FROM `category` WHERE `id_theme` = '$th' LIMIT $lim");
      while ($res = mysqli_fetch_assoc($query)){
-         echo "<a href='open-cat.php?theme=$res[id_theme]&category=$res[id]'>$res[name]</a><br>";
+         echo "<a href='category.php?theme=$res[id_theme]&category=$res[id]'>$res[name]</a><br>";
      }
 }
 
@@ -72,9 +72,19 @@ function info_user($db,$id){
     return $query;
 }
 
+
 function last_online($db,$id){
     $tm = time();
     mysqli_query($db, "UPDATE `users` SET `last_online` = '$tm' WHERE `id` = '$id'");
 }
 
+function get_post($db, $theme){
+    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme'");
+    return $query;
+}
+function get_post_id($db, $id){
+    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `id` = '$id'");
+    $query = mysqli_fetch_assoc($query);
+    return $query;
+}
 ?>

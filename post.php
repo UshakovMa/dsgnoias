@@ -1,6 +1,11 @@
 <?php
 include "db/conn.php";
 include "check_acc/check.php";
+if($_GET[id] == "" && $_GET[id] == null){
+    header("Location: index.php");
+}
+$query = get_post_id($db,$_GET[id]);
+
 ?>
 <!doctype html>
 <html lang="ru">
@@ -10,7 +15,7 @@ include "check_acc/check.php";
     <div class="container">
         <?php include "sp_bl/bread.php"?>
    <blockquote class="blockquote text-white">
-  <p class="mb-0">★API★подмена любого трэйда★case(уник диз)★все игры★топ %ssl★.</p>
+  <p class="mb-0"><?php echo $query[title]?></p>
   <footer class="blockquote-footer">Тема в разделе <a href="#">Требуются спамеры</a>, создана пользователем <a href="#">TMT</a>, <a href="#">13 мая 2017</a>. (Поднята Понедельник в 08:54)<br/>    
 Просмотров: 32734</footer>
 </blockquote>
@@ -41,7 +46,7 @@ include "check_acc/check.php";
 </div>
       <div class="row justify-content-between">
          <div class="col-12 col-md-3 text-center bg-dark">
-              <span class="nick-name text-white">NICK-NAME</span><br>
+              <span class="nick-name text-white"><?php echo get_name($query[author],$db)?></span><br>
               <span class="them text-danger">Редактор</span><br>
               <img src="img/avatar.png" alt="">
               <div class="soc-icon">
@@ -57,6 +62,7 @@ include "check_acc/check.php";
               </ul>
           </div>
           <div class="col-12 col-sm-12 col-md-9 bg-dark">
+             <!--
               <div class="img-post"><br>
                   <img src="img/content.gif" alt="">
               </div><br>
@@ -67,13 +73,17 @@ include "check_acc/check.php";
               <button type="button" class="btn btn-primary">Написать в VK</button>
               <button type="button" class="btn btn-info">Написать в Telgram</button><br>
               </div>
-              <details>
+                            <details>
                 <summary class="btn text-white bg-dark">Больше</summary>
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
-              </details><br>
+              </details>-->
+              
+               <span class="text-white"><?php echo $query[msg];?></span>
+              
+                <br>
               <div class="alert" role="alert">
                   <a href="#" class="btn">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
                   <a href="#" class="btn">Пожаловатся</a>
