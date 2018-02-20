@@ -6,7 +6,13 @@ if($_GET[theme] != null && $_GET[category] == null){
     $query = get_post($db,$th);
 }
 if($_GET[theme] != null && $_GET[category] != null){
-    
+    $th = (int)$_GET[theme];
+    $cat = (int)$_GET[category];
+    $query = get_post_1($db,$th,$cat);
+}
+if($_GET[theme] == null && $_GET[category] == null){
+    $query = get_all_post($db);
+                                                    
 }
 ?>
 <!doctype html>
@@ -78,7 +84,7 @@ if($_GET[theme] != null && $_GET[category] != null){
 </div><br>
    <ul class="list-group">
         <?php 
-    if($query != ""){
+    if($query != null){
             while($rs = mysqli_fetch_assoc($query)){
                 $time = date('d.m.y, в H:i',$rs['date_create']);
                 $aut = get_name($rs[author],$db);

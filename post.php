@@ -44,7 +44,7 @@ $query = get_post_id($db,$_GET[id]);
   </ul>
 </nav>
 </div>
-      <div class="row justify-content-between">
+      <div class="row justify-content-around margin-0">
          <div class="col-12 col-md-3 text-center bg-dark">
               <span class="nick-name text-white"><?php echo get_name($query[author],$db)?></span><br>
               <span class="them text-danger">Редактор</span><br>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>MooEditable example with an example Button Overlay</title>
+
+		<style type="text/css">
+			body{
+				font-family: sans-serif;
+				font-size: .9em;
+                background-color: #222;
+			}
+			#textarea-1{
+				width: 700px;
+				height: 200px;
+				padding: 10px;
+				border: 1px solid #343a40;
+                border-radius: .25rem;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="MooEditable.css">
+		<link rel="stylesheet" type="text/css" href="MooEditable.Extras.css">
+		<script type="text/javascript" src="mootools.js"></script>
+		<script type="text/javascript" src="MooEditable.js"></script>
+		<script type="text/javascript" src="MooEditable.UI.ButtonOverlay.js"></script>
+		<script type="text/javascript">
+			window.addEvent('domready', function(){
+				var mooeditable = $('textarea-1').mooEditable();
+				
+				MooEditable.Actions.buttonOverlay1 = {
+					title: 'Button Overlay 1',
+					type: 'button-overlay',
+					options: {
+						mode: 'text',
+						overlayHTML: (function(){
+								var html = '';
+								for (var i=1; i<=20; i++) html += '<a href="#">' + i + '</a> ';
+								return html;
+							})()
+					},
+					command: function(buttonOverlay, e){
+						var el = e.target;
+						if (el.tagName.toLowerCase() != 'a') return;
+						this.selection.insertContent($(el).get('text'));
+					}
+				};
+				
+				MooEditable.Actions.buttonOverlay2 = {
+					title: 'Button Overlay 2',
+					type: 'button-overlay',
+					options: {
+						mode: 'text',
+						overlayHTML: (function(){
+								var html = '';
+								for (var i=10; i<=20; i++) html += '<a href="#">' + i + '</a> ';
+								return html;
+							})()
+					},
+					command: function(buttonOverlay, e){
+						var el = e.target;
+						if (el.tagName.toLowerCase() != 'a') return;
+						this.selection.insertContent('number ' + $(el).get('text'));
+					}
+				};
+				
+				mooeditable.toolbar.addItem('buttonOverlay1');
+				mooeditable.toolbar.addItem('buttonOverlay2');
+
+			});
+		</script>
+	</head>
+	<body>
+		<form id="theForm" method="post" action="#">
+			<label for="textarea-1"></label>
+			<textarea id="textarea-1" name="editable1"></textarea>
+			<input type="submit">
+		</form>
+	</body>
+</html>

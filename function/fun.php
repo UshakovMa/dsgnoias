@@ -82,6 +82,17 @@ function get_post($db, $theme){
     $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme'");
     return $query;
 }
+
+function get_post_1($db, $theme, $cat){
+    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme' && `cat_id` = '$cat'");
+    return $query;
+}
+
+function get_all_post($db){
+    $query = mysqli_query($db, "SELECT * FROM `post`");
+    return $query;
+}
+
 function get_post_id($db, $id){
     $query = mysqli_query($db, "SELECT * FROM `post` WHERE `id` = '$id'");
     $query = mysqli_fetch_assoc($query);
