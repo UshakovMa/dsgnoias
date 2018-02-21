@@ -74,7 +74,7 @@
               <button class='btn btn-outline-success my-2 my-sm-0' type='submit'><i class='fa fa-search' aria-hidden='true'></i></button>
             </form>&nbsp;
               <div class='dropdown show'>
-                  <a class='btn dropdown-toggle' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                  <a class='btn dropdown-toggle' style='box-shadow: none' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     $name
                     <img src='img/avatar.png' class='img-circle' width='40' height='40' alt=''>
                   </a>

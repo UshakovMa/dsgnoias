@@ -23,7 +23,7 @@ $res = info_user($db, $_COOKIE[id]);
        <div class="row no-gutters justify-content-between">
              <div class="col-12 col-md-3 bg-dark" style="border-radius: .3rem;"><br>
                     <img src="img/avatar.png" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
-                    <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='#' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }?>
+                    <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='setting.php' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }?>
             </div>
               <div class="col-12 col-sm-12 col-md-8 bg-dark" style="border-radius: .3rem;">
                     <div class="alert text-white" role="alert">
