@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 21 2018 г., 05:42
+-- Время создания: Фев 21 2018 г., 14:09
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -133,8 +133,28 @@ CREATE TABLE `reg_tmp` (
 
 INSERT INTO `reg_tmp` (`hash`, `user_email`, `date`) VALUES
 ('8b59b8bc26bd6ecc3029e9342231da11', 'GWEGW2DSG2@SAF.AS', 1519176445),
-('f2bfb01390f802f6aa58ac9d9a48e80f', 'sdasd@mail.ua', 1518661365),
-('5a1b8e94551a27022c98b3063bdb84c0', 'us@mail.ua', 1518659332);
+('f2bfb01390f802f6aa58ac9d9a48e80f', 'sdasd@mail.ua', 1518661365);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `sex` int(11) NOT NULL,
+  `avatar` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `settings`
+--
+
+INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`) VALUES
+(1, 'Пустой статут пидораса!!))', 0, '1519210743_1.jpg'),
+(11, '', 0, '1519211328_11.jpg');
 
 -- --------------------------------------------------------
 
@@ -175,22 +195,17 @@ CREATE TABLE `users` (
   `online` tinyint(1) NOT NULL,
   `last_online` int(11) NOT NULL,
   `ban` tinyint(1) NOT NULL,
-  `ava` text NOT NULL,
   `verificate` int(2) NOT NULL,
   `comand` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `ava`, `verificate`, `comand`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 0, 1518443550, 1, 0, 1519180883, 0, '', 1, 1),
-(2, 'id1209872', 'usha@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'bd8ba201073b0479c77edfb538b4cf42', 1, 0, 1518486588, 1, 0, 0, 0, '', 1, 0),
-(3, 'lolo', 'lolo@gmail.com', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'f4e70d8ea44d0300d72dae431b280bbb', 1, 0, 1518497499, 1, 0, 0, 0, '', 0, 1),
-(4, 'sfa', 'us@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', '581b7e6309a6cb64669b977b713527a2', 1, 0, 1518659332, 0, 0, 0, 0, '', 0, 0),
-(5, 'ddpsss', 'sdasd@mail.ua', 'b99937535a8405c947a37947cb775575', '127.0.0.1', '77e0f6bded66721ff9826f4860e4b165', 1, 0, 1518661365, 1, 0, 0, 0, '', 0, 0),
-(6, 'WET', 'GWEGW2DSG2@SAF.AS', '93135fed372d54992bcd3824cccc337b', '127.0.0.1', '9a6c5b4b1821a4277b847aeefb870811', 1, 0, 1519176445, 0, 0, 0, 0, '', 0, 0);
+INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `verificate`, `comand`) VALUES
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 200, 1518443550, 1, 0, 1519210997, 0, 1, 1),
+(11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '484277f6a80526c437a1deb99645dd9e', 1, 0, 1519211074, 1, 0, 1519211328, 0, 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -220,6 +235,12 @@ ALTER TABLE `post`
 ALTER TABLE `reg_tmp`
   ADD UNIQUE KEY `user` (`user_email`),
   ADD UNIQUE KEY `hash` (`hash`);
+
+--
+-- Индексы таблицы `settings`
+--
+ALTER TABLE `settings`
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Индексы таблицы `Theme`
@@ -267,7 +288,7 @@ ALTER TABLE `Theme`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

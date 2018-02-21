@@ -7,12 +7,17 @@ if($_GET[id] == null){
     }
 $res = info_user($db, $_COOKIE[id]);
 $status = get_status($db,$_COOKIE[id]);
+$ava = get_ava($db, $_COOKIE[id]);
 }else{
     if($_GET[id] == $_COOKIE[id]){
         header("Location: user.php");
     }
     $res = info_user($db,$_GET[id]);
+    if($res == ""){
+       header("Location: user.php"); 
+    }
     $status = get_status($db,$_GET[id]);
+    $ava = get_ava($db, $_GET[id]);
 }
 ?>
 <!doctype html>
@@ -24,7 +29,7 @@ $status = get_status($db,$_COOKIE[id]);
    <div class="container">
        <div class="row no-gutters justify-content-between">
              <div class="col-12 col-md-3 bg-dark" style="border-radius: .3rem;"><br>
-                    <img src="img/avatar.png" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
+                    <img src="<?php echo $ava;?>" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
                     <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='setting.php' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }?>
             </div>
               <div class="col-12 col-sm-12 col-md-8 bg-dark" style="border-radius: .3rem;">

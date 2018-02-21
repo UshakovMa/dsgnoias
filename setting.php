@@ -24,7 +24,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
                   <div class="tab-pane fade text-white show active" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
                       <span>Аватар:</span>
-                <img src="img/avatar.png" width="100px" alt="">
+                <img src="<?php echo $ava;?>" width="100px" alt="">
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button><hr>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">

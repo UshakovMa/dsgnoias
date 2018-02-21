@@ -28,6 +28,7 @@
               </form>';}else{
     $name = get_name($_COOKIE[id], $db);
     $coin = get_coin($db, $_COOKIE[id]);
+    $ava = get_ava($db, $_COOKIE[id]);
     echo "<form class='form-inline'>
                <div class='dropdown show'>
                   <button class='btn bg-warning dropdown-toggle' style='box-shadow: none' id='dropdowMSG' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-envelope'></i><span class='badge badge-success notyfy text-white'>4</span></button>&nbsp;
@@ -77,7 +78,7 @@
               <div class='dropdown show'>
                   <a class='btn dropdown-toggle' style='box-shadow: none' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     $name
-                    <img src='img/avatar.png' class='img-circle' width='40' height='40' alt=''>
+                    <img src='$ava' class='img-circle' width='40' height='40' alt=''>
                   </a>
                   <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
                   <h6 class='dropdown-header'>Ваш баланс: $coin LCH</h6>

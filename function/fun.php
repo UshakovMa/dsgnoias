@@ -110,12 +110,22 @@ function get_admin($db){
 }
 
 function get_status($db, $id){
-    $query = mysqli_query($db, "SELECT * FROM `settings` WHERE `id` = '$id'");
+    $query = mysqli_query($db, "SELECT `status` FROM `settings` WHERE `id` = '$id'");
     $query = mysqli_fetch_assoc($query);
     return $query[status];
 }
 
 function set_ava($db, $link, $id){
     mysqli_query($db, "UPDATE `settings` SET `avatar` = '$link' WHERE `id` = '$id'");
+}
+function get_ava($db, $id){
+    $query = mysqli_query($db, "SELECT `avatar` FROM `settings` WHERE `id` = '$id'");
+    $query = mysqli_fetch_assoc($query);
+    if($query[avatar] == ""){
+        $res = "img/avatar.png";
+    }else{
+        $res = "img_user/".$query[avatar];
+    }
+    return $res;
 }
 ?>
