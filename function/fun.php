@@ -43,13 +43,13 @@ function views_all_theme($db){
                       <div class='media-body'>
                         <h5 class='mt-0'><a href='category.php?theme=$res[id]'>$res[name]</a></h5>
                         <div class='categories'>
-                        <div class='cat1' style='min-width:  150px;'>";
+                        <div class='cat1'>";
                             get_category($db,$res[id],"1,3");
                         echo    "</div>
-                        <div class='cat2' style='min-width:  150px;'>";
+                        <div class='cat2'>";
                         get_category($db,$res[id],"4,3");
                         echo  "</div>
-                            <div class='cat3' style='min-width:  150px;'>";
+                            <div class='cat3'>";
                         get_category($db,$res[id],"7,3");
                         echo    "</div>
                         </div>
@@ -70,6 +70,12 @@ function info_user($db,$id){
     $query = mysqli_query($db, "SELECT `date`,`login`,`last_online`,`verificate` FROM `users` WHERE `id` = '$id'");
     $query = mysqli_fetch_assoc($query);
     return $query;
+}
+
+function get_coin($db,$id){
+    $query = mysqli_query($db, "SELECT `coin_money` FROM `users` WHERE `id` = '$id'");
+    $query = mysqli_fetch_assoc($query);
+    return $query[coin_money];
 }
 
 function last_online($db,$id){
@@ -103,4 +109,13 @@ function get_admin($db){
     return $query;
 }
 
+function get_status($db, $id){
+    $query = mysqli_query($db, "SELECT * FROM `settings` WHERE `id` = '$id'");
+    $query = mysqli_fetch_assoc($query);
+    return $query[status];
+}
+
+function set_ava($db, $link, $id){
+    mysqli_query($db, "UPDATE `settings` SET `avatar` = '$link' WHERE `id` = '$id'");
+}
 ?>

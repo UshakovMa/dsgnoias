@@ -15,25 +15,8 @@ $(document).ready(function() {
 }).show();
 };
     
-    function setimage() {
-    var $input = $("#ctrl_avatar");
-    var fd = new FormData;
-
-    fd.append('img', $input.prop('files')[0]);
-    $.ajax({
-        url: 'file/ph.php',
-        data: fd,
-        processData: false,
-        contentType: false,
-        type: 'POST',
-        success: function (data) {
-            alert(data);
-        }
-    });
-}
     
-    
- 	    $('form').submit(function(e) {
+ 	    $('#ajax-form').submit(function(e) {
         var $form = $(this);
         $.ajax({
           type: $form.attr('method'),
@@ -61,4 +44,8 @@ $(document).ready(function() {
       })
   });
 
+    
+    var div = document.createElement('div');
+    return ('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)
+    
 });

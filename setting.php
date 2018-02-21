@@ -240,16 +240,16 @@
       </div>
       <div class="modal-body">
         <img src="img/avatar.png" width="100" alt="">
-           <form id='file_' enctype="multipart/form-data" action="file/ph.php" method="POST">
+           <form class="box" method="post" action="file/ph.php" enctype="multipart/form-data">
             <input type="file" name="avatar" class="textCtrl avatarUpload" id="ctrl_avatar" title="Поддерживаемые форматы: JPEG, PNG, GIF" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
-            <label for="ctrl_avatar" class="btn btn-success"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label>
-            <button type="submit">sxsa</button>
-           </form>
-      </div>
-      <div class="modal-footer">
+            <label for="ctrl_avatar" class="btn btn-success clear"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label>
+                  <div class="modal-footer">
         <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-outline-success">Сохранить</button>
+        <button type="submit" class="btn btn-outline-success">Сохранить</button>
       </div>
+            </form>
+      </div>
+
     </div>
   </div>
 </div>

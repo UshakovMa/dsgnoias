@@ -27,6 +27,7 @@
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#Modal1" type="button">Регистрация <i class="fa fa-user-circle" aria-hidden="true"></i></button>
               </form>';}else{
     $name = get_name($_COOKIE[id], $db);
+    $coin = get_coin($db, $_COOKIE[id]);
     echo "<form class='form-inline'>
                <div class='dropdown show'>
                   <button class='btn bg-warning dropdown-toggle' style='box-shadow: none' id='dropdowMSG' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-envelope'></i><span class='badge badge-success notyfy text-white'>4</span></button>&nbsp;
@@ -79,12 +80,13 @@
                     <img src='img/avatar.png' class='img-circle' width='40' height='40' alt=''>
                   </a>
                   <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-                    <a class='dropdown-item bg-dark' href='user.php'>Мой профиль</a>
+                  <h6 class='dropdown-header'>Ваш баланс: $coin LCH</h6>
                     <div class='dropdown-divider'></div>
+                    <a class='dropdown-item bg-dark' href='user.php'>Мой профиль</a>
                     <a class='dropdown-item bg-dark' href='#'>Мои темы</a>
                     <a class='dropdown-item bg-dark' href='#'>Мои сообщения</a>
                     <a class='dropdown-item bg-dark' href='#'>Закладки</a>
-                    <a class='dropdown-item bg-dark' href='info-me.php'>Информация обо мне</a>
+                    <a class='dropdown-item bg-dark' href='setting.php'>Информация обо мне</a>
                     <a class='dropdown-item bg-dark' href='#'>Пароль</a>
                     <div class='dropdown-divider'></div>
                     <a class='dropdown-item bg-dark' href='exit'>Выход</a>

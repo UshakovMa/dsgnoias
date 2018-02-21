@@ -6,11 +6,13 @@ if($_GET[id] == null){
         header("Location: index.php");
     }
 $res = info_user($db, $_COOKIE[id]);
+$status = get_status($db,$_COOKIE[id]);
 }else{
     if($_GET[id] == $_COOKIE[id]){
         header("Location: user.php");
     }
     $res = info_user($db,$_GET[id]);
+    $status = get_status($db,$_GET[id]);
 }
 ?>
 <!doctype html>
@@ -34,7 +36,8 @@ $res = info_user($db, $_COOKIE[id]);
                             }else{
                             echo "Был в сети ".date('d.m.o в H:i',$res['last_online'])." мин назад";
                             }?>
-                            </span>
+                            </span><br>
+                            <small class="text-muted"><?php echo $status; ?></small>
                     </div><hr>
                     <div class="alert text-white" role="alert">
                           <span class="text-secondary" style="margin-right: 20px;">Регистрация:</span><span>
@@ -73,28 +76,26 @@ $res = info_user($db, $_COOKIE[id]);
                 </div>       
            </div><br>
            
-            <div class="lc-walls bg-dark col-12 col-md-12" style="border-radius: .3rem;">
-                        <h5 class="text-secondary">-Последние ответы</h5>
+            <div class="bg-dark col-12 col-md-12" style="border-radius: .3rem;">
+                        <h5 class="text-secondary">Последние ответы</h5>
                         <div class="d-flex">
-                            <img src="img/avatar.png" class="img-circle" width="60" height="60" alt="">
+                            <img src="img/avatar.png" class="img-circle mr-3" width="60" height="60" alt="">
                             <div class="d-block">
                                 <a href="#" class="text-warning">NickName</a>
                                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eius, repudiandae molestiae omnis tempora optio sed impedit itaque molestias quas.</p>
                                 <div class="alert fr" role="alert">
-                              <a href="#" class="btn">Пожаловатся</a>
-                              <a href="#" class="btn">Ответить</a>
+                              <a href="#" class="btn">Перейти к обсуждению</a>
                               <span class="text-secondary btn">17.02.2018</span>
                             </div><hr>
                             </div>
                         </div>
                         <div class="d-flex">
-                            <img src="img/avatar.png" class="img-circle" width="60" height="60" alt="">
+                            <img src="img/avatar.png" class="img-circle mr-3" width="60" height="60" alt="">
                             <div class="d-block">
                                 <a href="#" class="text-warning">NickName</a>
                                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eius, repudiandae molestiae omnis tempora optio sed impedit itaque molestias quas.</p>
                                 <div class="alert fr" role="alert">
-                              <a href="#" class="btn">Пожаловатся</a>
-                              <a href="#" class="btn">Ответить</a>
+                              <a href="#" class="btn">Перейти к обсуждению</a>
                               <span class="text-secondary btn">17.02.2018</span>
                             </div><hr>
                             </div>
