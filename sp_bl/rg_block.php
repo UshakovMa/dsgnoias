@@ -3,24 +3,24 @@
                  <li class="list-group-item d-flex justify-content-center bg-dark align-items-center" style="background-color: #FFC107 !important">
                     <span class="font-weight-bold">Команда форума:</span>
                   </li>
-                  <li class="list-group-item d-flex justify-content-left bg-dark align-items-center col-">
-                    <img src="img/avatar.png" width="40" height="40" class="img-circle pull-left" alt="">&nbsp;
-                    <div class="user-information"><span class="text-white font-weight-bold">UserName</span>
-                        <span class="text-warning">Админ</span></div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-left bg-dark align-items-center col-">
-                    <img src="img/avatar.png" width="40" height="40" class="img-circle pull-left" alt="">&nbsp;
-                    <div class="user-information"><span class="text-white font-weight-bold">UserName</span>
-                        <span class="text-danger">Модер</span></div>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-left bg-dark align-items-center">
-                   <div class="d-flex">
-                   <img src="img/avatar.png" width="40" height="40" class="img-circle pull-left" alt="">
-                   <div class="online"></div>
+                <?php $q = get_admin($db);
+                    
+                    while($res = mysqli_fetch_assoc($q)){
+                        if($res[last_online] * 60 * 5 > time()){
+                            $b_o = "<div class='online'></div>";
+                        }else{
+                            $b_o = "";
+                        }
+                        echo "<li class='list-group-item d-flex justify-content-left bg-dark align-items-center col-'>
+                        <div class='d-flex''>
+                    <img src='img/avatar.png' width='40' height='40' class='img-circle pull-left' alt=''>
+                    $b_o
                     </div>&nbsp;
-                    <div class="user-information"><span class="text-white font-weight-bold">UserName</span>
-                    <span class="text-info">Редактор</span></div>
-                  </li>
+                    <div class='user-information'><span class='text-white font-weight-bold'><a href='user.php?id=$res[id]'>$res[login]</a></span>
+                        <span class='text-warning'>Админ</span></div>
+                  </li>";
+                    }
+                    ?>
                 </ul><br>
                 <div class="card text-center">
                   <div class="card-body bg-dark">

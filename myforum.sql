@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 18 2018 г., 06:41
+-- Время создания: Фев 21 2018 г., 05:42
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -104,8 +104,16 @@ CREATE TABLE `post` (
   `theme_id` int(11) NOT NULL,
   `cat_id` int(11) NOT NULL,
   `views` int(11) NOT NULL,
-  `close` tinyint(1) NOT NULL
+  `close` tinyint(1) NOT NULL,
+  `date_create` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `msg`, `author`, `theme_id`, `cat_id`, `views`, `close`, `date_create`) VALUES
+(1, 'TEST', 'dbgjasgfkasbgfkLorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!', 1, 1, 2, 0, 0, 1519092754);
 
 -- --------------------------------------------------------
 
@@ -124,6 +132,7 @@ CREATE TABLE `reg_tmp` (
 --
 
 INSERT INTO `reg_tmp` (`hash`, `user_email`, `date`) VALUES
+('8b59b8bc26bd6ecc3029e9342231da11', 'GWEGW2DSG2@SAF.AS', 1519176445),
 ('f2bfb01390f802f6aa58ac9d9a48e80f', 'sdasd@mail.ua', 1518661365),
 ('5a1b8e94551a27022c98b3063bdb84c0', 'us@mail.ua', 1518659332);
 
@@ -167,19 +176,21 @@ CREATE TABLE `users` (
   `last_online` int(11) NOT NULL,
   `ban` tinyint(1) NOT NULL,
   `ava` text NOT NULL,
-  `verificate` int(2) NOT NULL
+  `verificate` int(2) NOT NULL,
+  `comand` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `ava`, `verificate`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 0, 1518443550, 1, 0, 1518925257, 0, '', 1),
-(2, 'id1209872', 'usha@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'bd8ba201073b0479c77edfb538b4cf42', 1, 0, 1518486588, 1, 0, 0, 0, '', 0),
-(3, 'lolo', 'lolo@gmail.com', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'f4e70d8ea44d0300d72dae431b280bbb', 1, 0, 1518497499, 1, 0, 0, 0, '', 0),
-(4, 'sfa', 'us@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', '581b7e6309a6cb64669b977b713527a2', 1, 0, 1518659332, 0, 0, 0, 0, '', 0),
-(5, 'ddpsss', 'sdasd@mail.ua', 'b99937535a8405c947a37947cb775575', '127.0.0.1', '77e0f6bded66721ff9826f4860e4b165', 1, 0, 1518661365, 1, 0, 0, 0, '', 0);
+INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `ava`, `verificate`, `comand`) VALUES
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 0, 1518443550, 1, 0, 1519180883, 0, '', 1, 1),
+(2, 'id1209872', 'usha@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'bd8ba201073b0479c77edfb538b4cf42', 1, 0, 1518486588, 1, 0, 0, 0, '', 1, 0),
+(3, 'lolo', 'lolo@gmail.com', '74be16979710d4c4e7c6647856088456', '127.0.0.1', 'f4e70d8ea44d0300d72dae431b280bbb', 1, 0, 1518497499, 1, 0, 0, 0, '', 0, 1),
+(4, 'sfa', 'us@mail.ua', '74be16979710d4c4e7c6647856088456', '127.0.0.1', '581b7e6309a6cb64669b977b713527a2', 1, 0, 1518659332, 0, 0, 0, 0, '', 0, 0),
+(5, 'ddpsss', 'sdasd@mail.ua', 'b99937535a8405c947a37947cb775575', '127.0.0.1', '77e0f6bded66721ff9826f4860e4b165', 1, 0, 1518661365, 1, 0, 0, 0, '', 0, 0),
+(6, 'WET', 'GWEGW2DSG2@SAF.AS', '93135fed372d54992bcd3824cccc337b', '127.0.0.1', '9a6c5b4b1821a4277b847aeefb870811', 1, 0, 1519176445, 0, 0, 0, 0, '', 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -244,7 +255,7 @@ ALTER TABLE `light`
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `Theme`
@@ -256,7 +267,7 @@ ALTER TABLE `Theme`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

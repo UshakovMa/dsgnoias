@@ -72,7 +72,6 @@ function info_user($db,$id){
     return $query;
 }
 
-
 function last_online($db,$id){
     $tm = time();
     mysqli_query($db, "UPDATE `users` SET `last_online` = '$tm' WHERE `id` = '$id'");
@@ -98,4 +97,10 @@ function get_post_id($db, $id){
     $query = mysqli_fetch_assoc($query);
     return $query;
 }
+
+function get_admin($db){
+    $query = mysqli_query($db, "SELECT * FROM `users` WHERE `comand` = '1' LIMIT 5");
+    return $query;
+}
+
 ?>
