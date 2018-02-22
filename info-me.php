@@ -7,7 +7,7 @@
     <?php include "sp_bl/head.php";?>
   <body>
     <?php include "sp_bl/header.php";?>
-        <div class="container">
+    <div class="container">
          <div class="row">
            <div class="col-12 col-md-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -23,34 +23,73 @@
           <div class="col-12 col-sm-10 col-md-9 bg-dark" style="padding: 50px;">
                 <div class="tab-content" id="v-pills-tabContent">
                   <div class="tab-pane fade text-white show active" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
-                  <div class="row">
-                   <div class="avatar-edit col-sm">
-                   <span>Текущий аватар:</span>
-                <img src="<?php echo $ava;?>" class="d-block" width="175px" height="175px" alt=""><br>
-                <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button></div>
-                <form action="file/user_inf.php" class="col-sm" method="post" id="avtorization-form">
+                      <span>Аватар:</span>
+                <img src="img/avatar.png" width="100px" alt="">
+                <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button><hr>
                 <div class="input-group mb-3">
-                  <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус"><hr>
+                  <div class="input-group-prepend">
+                    <span class="btn">Статус:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Статус"><hr>
                 </div><span class="text-secondary">Отображается под вашим ником в сообщениях</span><hr>
                 <span style="margin-right: 10%">Пол:</span><br>
-                    <input id="male" type="radio" name="gender" value="1">
+                    <input id="male" type="radio" name="gender" value="male">
                     <label for="male">Мужской</label>
-                    <input id="female" type="radio" name="gender" value="2">
+                    <input id="female" type="radio" name="gender" value="female">
                     <label for="female">Женский</label>
-                    <input id="not-gender" type="radio"  name="gender" value="0">
+                    <input id="not-gender" checked type="radio"  name="gender">
                     <label for="not-gender">Не указано</label><hr>
+                <span>Дата рождения:</span>
+                  <select class="bg-dark text-white" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                  </select>
+                  <input type="text" class="bg-dark text-white border-0" style="width: 70px;" placeholder="День">
+                  <input type="text" class="bg-dark text-white border-0" style="width: 70px;" placeholder="Год">
+                  <hr>
                   <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Настоящие имя"><hr>
+                  <div class="input-group-prepend">
+                    <span class="btn text-mobile-none">Адрес:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Адрес"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Род занятий"><hr>
+                  <div class="input-group-prepend">
+                    <span class="btn text-mobile-none">Род занятий:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Род занятий"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Город"><hr>
+                  <div class="input-group-prepend">
+                    <span class="btn text-mobile-none">Сайт:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Сайт"><hr>
                 </div>
-                <button type="submit" class="btn btn-outline-success fr">Сохранить изменения</button><br>
-                      </form>
-                      </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="btn text-mobile-none">Город:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Город"><hr>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="btn text-mobile-none">Интересы:</span>
+                  </div>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Интересы"><hr>
+                </div>
+                <button class="btn btn-outline-success">Сохранить изменения</button>
+
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-contact-info" role="tabpanel" aria-labelledby="v-pills-contact-info-tab">
                       <div class="input-group mb-3">
@@ -200,19 +239,14 @@
         </button>
       </div>
       <div class="modal-body">
-           <form class="box" method="post" action="file/ph.php" 
-           enctype="multipart/form-data">
-           <div class="d-block">
-           <img src="<?php echo $ava;?>" width="100" height="100" style="margin-bottom: 5px;">
+        <img src="img/avatar.png" width="100" alt="">
             <input type="file" name="avatar" class="textCtrl avatarUpload" id="ctrl_avatar" title="Поддерживаемые форматы: JPEG, PNG, GIF" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
-            <label for="ctrl_avatar" class="btn btn-success clear"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label></div>
-            <div class="modal-footer">
+            <label for="ctrl_avatar" class="btn btn-success"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label>
+      </div>
+      <div class="modal-footer">
         <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
-        <button type="submit" class="btn btn-outline-success">Сохранить</button>
+        <button type="button" class="btn btn-outline-success">Сохранить</button>
       </div>
-            </form>
-      </div>
-
     </div>
   </div>
 </div>

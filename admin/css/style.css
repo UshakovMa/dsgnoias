@@ -245,6 +245,20 @@ nav .brand-logo {
     left: 50px;
 }
 
+#air{
+    width: 500px; 
+    height: 400px;
+    background-color: #222;
+    color: #fff;
+}
+
+rect{
+    fill: #222;
+}
+
+text{
+    color: #fff;
+}
 
 
 /* Ноутбуки и т.д. */

@@ -10,7 +10,7 @@
       <div class="modal-body">
         <form method="post" action="login/index.php" id="avtorization-form">
           <div class="form-group">
-            <input type="text" class="form-control bg-dark text-white" placeholder="Логин или email" name="el" required>
+            <input type="text" maxlength="15" class="form-control bg-dark text-white" placeholder="Логин или email" name="el" required>
           </div>
           <div class="form-group">
             <input type="password" class="form-control bg-dark text-white" placeholder="Пароль" name="pass" required>
@@ -40,7 +40,7 @@
       <div class="modal-body">
         <form method="post" id="reg" action="reg/index.php" id="avtorization-form">
          <div class="form-group">
-            <input type="text" name="login" class="form-control bg-dark text-white" required placeholder="Логин" id="login">
+            <input type="text" maxlength="15" name="login" class="form-control bg-dark text-white" required placeholder="Логин" id="login">
           </div>
           <div class="form-group">
             <input type="email" name="email" class="form-control bg-dark text-white" required placeholder="Почта">

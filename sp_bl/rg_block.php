@@ -11,9 +11,10 @@
                         }else{
                             $b_o = "";
                         }
+                        $admin_ava = get_ava($db, $res[id]);
                         echo "<li class='list-group-item d-flex justify-content-left bg-dark align-items-center col-'>
                         <div class='d-flex''>
-                    <img src='img/avatar.png' width='40' height='40' class='img-circle pull-left' alt=''>
+                    <img src='$admin_ava' width='40' height='40' class='img-circle pull-left' alt=''>
                     $b_o
                     </div>&nbsp;
                     <div class='user-information'><span class='text-white font-weight-bold'><a href='user.php?id=$res[id]'>$res[login]</a></span>

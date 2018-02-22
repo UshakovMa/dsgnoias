@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 22 2018 г., 14:48
--- Версия сервера: 5.6.38
--- Версия PHP: 5.6.32
+-- Время создания: Фев 22 2018 г., 20:33
+-- Версия сервера: 5.5.53
+-- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -132,6 +130,8 @@ CREATE TABLE `reg_tmp` (
 --
 
 INSERT INTO `reg_tmp` (`hash`, `user_email`, `date`) VALUES
+('66dacd80f193a77cc0db3ec507bf3409', '5524@gmail.com', 1519320307),
+('9707305a84cd398d12047c4f6d144d0d', 'asdmas@gmail.com', 1519315609),
 ('8b59b8bc26bd6ecc3029e9342231da11', 'GWEGW2DSG2@SAF.AS', 1519176445),
 ('f2bfb01390f802f6aa58ac9d9a48e80f', 'sdasd@mail.ua', 1518661365);
 
@@ -156,8 +156,9 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`, `name`, `prof`, `city`) VALUES
-(1, 'Пустой статут пидораса!!))', 0, '../img_user/1519295570_1.jpg', '', '', ''),
-(11, '', 0, '../img_user/1519288380_11.jpg', '', '', '');
+(1, 'Пустой статут пидораса', 0, '../img_user/1519318048_1.jpg', '', '', ''),
+(11, '', 0, '../img_user/1519288380_11.jpg', '', '', ''),
+(14, '', 0, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -186,7 +187,7 @@ INSERT INTO `Theme` (`id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `login` varchar(32) NOT NULL,
+  `login` varchar(15) NOT NULL,
   `email` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `ip` varchar(32) NOT NULL,
@@ -207,8 +208,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `verificate`, `comand`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1519297085, 0, 1, 1),
-(11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 0, 1519211074, 1, 0, 1519288460, 0, 0, 0);
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 200, 1518443550, 1, 0, 1519319572, 0, 1, 1),
+(11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 0, 1519211074, 1, 0, 1519288460, 0, 0, 0),
+(13, 'asjkdnasjkdaskj', 'asdmas@gmail.com', 'b71a52741c156d9b349e304789de5090', '127.0.0.1', '', 1, 0, 1519315696, 1, 0, 1519315744, 0, 0, 0),
+(14, '123132132123132', '123456@gmail.com', '14e1b600b1fd579f47433b88e8d85291', '127.0.0.1', '', 1, 0, 1519319599, 1, 0, 1519319856, 0, 0, 0),
+(15, '5524', '5524@gmail.com', 'b71a52741c156d9b349e304789de5090', '127.0.0.1', '830dfd8e7d6f9472f542ca345ae4d73d', 1, 0, 1519320307, 0, 0, 0, 0, 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -268,32 +272,26 @@ ALTER TABLE `users`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT для таблицы `light`
 --
 ALTER TABLE `light`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT для таблицы `Theme`
 --
 ALTER TABLE `Theme`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

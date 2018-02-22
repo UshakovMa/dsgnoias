@@ -115,6 +115,10 @@ function get_status($db, $id){
     return $query[status];
 }
 
+function set_status($db, $text){
+    mysqli_query($db, "UPDATE `settings` SET `status` = '$text' WHERE `id` = '$_COOKIE[id]'");
+}
+
 function set_ava($db, $link, $id){
     mysqli_query($db, "UPDATE `settings` SET `avatar` = '$link' WHERE `id` = '$id'");
 }

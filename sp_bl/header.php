@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -7,19 +7,19 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Статьи</a>
+                <a class="nav-link" href="#">Маркет</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Маркет</a>
+                <a class="nav-link" href="#">ЧАТ</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">FAQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Гарант</a>
+                <a class="nav-link" href="#">Правила форума</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Прочее</a>
+                <a class="nav-link" href="#">Поддержка</a>
               </li>
             </ul><?php if($_COOKIE[hash] == "" && $_COOKIE[id] == ""){ echo '
              <form class="form-inline">
@@ -77,8 +77,8 @@
             </form>&nbsp;
               <div class='dropdown show'>
                   <a class='btn dropdown-toggle' style='box-shadow: none' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                    $name
-                    <img src='$ava' class='img-circle' width='40' height='40' alt=''>
+                  <img src='$ava' class='img-circle' width='40' height='40' alt=''>
+                    &nbsp;$name
                   </a>
                   <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
                   <h6 class='dropdown-header'>Ваш баланс: $coin LCH</h6>
@@ -97,4 +97,4 @@
 }?>
           </div>
     </div>
-  </nav><br>
+  </nav><br><br><br><br>

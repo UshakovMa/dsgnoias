@@ -70,6 +70,10 @@ input[type=radio]:checked + label:before {
     line-height: 12px;
 }
 
+.hover-color-btn:hover{
+    background-color: #30353B;
+}
+
 a{
     color: #fff;
     text-decoration: none;
@@ -92,6 +96,10 @@ a:hover{
     cursor: pointer;
 }
 
+.user-block-avatar{
+    border-radius: .3rem; 
+    max-height: 318px;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     color: #343A40;
@@ -176,6 +184,14 @@ ul > li > .dropdown-toggle::after{
     max-width: 222px;
     min-height: 222px;
     max-width: 222px;
+}
+
+.avatar-edit{
+    margin-bottom: 20px;
+}
+
+#save{
+    display: none;
 }
 
 .img-navbar-logo{
