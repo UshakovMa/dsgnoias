@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 22 2018 г., 08:07
+-- Время создания: Фев 22 2018 г., 14:48
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL,
+  `name` varchar(21) NOT NULL,
   `id_theme` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -45,10 +45,10 @@ INSERT INTO `category` (`id`, `name`, `id_theme`) VALUES
 (4, 'Фвыф', 1),
 (5, 'фув', 1),
 (6, 'c#', 1),
-(7, 'saflhskjdghqeh', 1),
+(7, '123456789123456789123', 1),
 (8, 'savgfas', 1),
 (9, 'asdgbasdgh', 1),
-(10, 'bsdgasg', 1);
+(10, '123456789123456789123', 1);
 
 -- --------------------------------------------------------
 
@@ -145,16 +145,19 @@ CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
   `status` varchar(50) NOT NULL,
   `sex` int(11) NOT NULL,
-  `avatar` text NOT NULL
+  `avatar` text NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `prof` text NOT NULL,
+  `city` varchar(21) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `settings`
 --
 
-INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`) VALUES
-(1, 'Пустой статут пидораса!!))', 0, '1519210743_1.jpg'),
-(11, '', 0, '1519211328_11.jpg');
+INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`, `name`, `prof`, `city`) VALUES
+(1, 'Пустой статут пидораса!!))', 0, '../img_user/1519295570_1.jpg', '', '', ''),
+(11, '', 0, '../img_user/1519288380_11.jpg', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -204,8 +207,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `verificate`, `comand`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 200, 1518443550, 1, 0, 1519210997, 0, 1, 1),
-(11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '484277f6a80526c437a1deb99645dd9e', 1, 0, 1519211074, 1, 0, 1519211328, 0, 0, 0);
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1519297085, 0, 1, 1),
+(11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 0, 1519211074, 1, 0, 1519288460, 0, 0, 0);
 
 --
 -- Индексы сохранённых таблиц

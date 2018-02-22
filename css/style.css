@@ -172,6 +172,10 @@ ul > li > .dropdown-toggle::after{
 
 .avatar-img{
     width: 80%;
+    max-height: 222px;
+    max-width: 222px;
+    min-height: 222px;
+    max-width: 222px;
 }
 
 .img-navbar-logo{

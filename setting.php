@@ -26,70 +26,28 @@
                       <span>Аватар:</span>
                 <img src="<?php echo $ava;?>" width="100px" alt="">
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button><hr>
+                <form action="file/user_inf.php" method="post" id="avtorization-form">
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Статус:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Статус"><hr>
+                  <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус"><hr>
                 </div><span class="text-secondary">Отображается под вашим ником в сообщениях</span><hr>
                 <span style="margin-right: 10%">Пол:</span><br>
-                    <input id="male" type="radio" name="gender" value="male">
+                    <input id="male" type="radio" name="gender" value="1">
                     <label for="male">Мужской</label>
-                    <input id="female" type="radio" name="gender" value="female">
+                    <input id="female" type="radio" name="gender" value="2">
                     <label for="female">Женский</label>
-                    <input id="not-gender" checked type="radio"  name="gender">
+                    <input id="not-gender" type="radio"  name="gender" value="0">
                     <label for="not-gender">Не указано</label><hr>
-                <span>Дата рождения:</span>
-                  <select class="bg-dark text-white" id="inputGroupSelect01">
-                    <option selected></option>
-                    <option value="1">Январь</option>
-                    <option value="2">Февраль</option>
-                    <option value="3">Март</option>
-                    <option value="4">Апрель</option>
-                    <option value="5">Май</option>
-                    <option value="6">Июнь</option>
-                    <option value="7">Июль</option>
-                    <option value="8">Август</option>
-                    <option value="9">Сентябрь</option>
-                    <option value="10">Октябрь</option>
-                    <option value="11">Ноябрь</option>
-                    <option value="12">Декабрь</option>
-                  </select>
-                  <input type="text" class="bg-dark text-white border-0" style="width: 70px;" placeholder="День">
-                  <input type="text" class="bg-dark text-white border-0" style="width: 70px;" placeholder="Год">
-                  <hr>
                   <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn text-mobile-none">Адрес:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Адрес"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Настоящие имя"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn text-mobile-none">Род занятий:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Род занятий"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Род занятий"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn text-mobile-none">Сайт:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Сайт"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Город"><hr>
                 </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn text-mobile-none">Город:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Город"><hr>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn text-mobile-none">Интересы:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Интересы"><hr>
-                </div>
-                <button class="btn btn-outline-success">Сохранить изменения</button>
-
+                <button type="submit" class="btn btn-outline-success fr">Сохранить изменения</button><br>
+                      </form>
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-contact-info" role="tabpanel" aria-labelledby="v-pills-contact-info-tab">
                       <div class="input-group mb-3">
@@ -239,7 +197,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img src="img/avatar.png" width="100" alt="">
+        <img src="<?php echo $ava;?>" width="100" alt="">
            <form class="box" method="post" action="file/ph.php" enctype="multipart/form-data">
             <input type="file" name="avatar" class="textCtrl avatarUpload" id="ctrl_avatar" title="Поддерживаемые форматы: JPEG, PNG, GIF" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
             <label for="ctrl_avatar" class="btn btn-success clear"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label>

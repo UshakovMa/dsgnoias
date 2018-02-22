@@ -42,14 +42,14 @@ function views_all_theme($db){
                       <img class='mr-3 img-categories' src='img/chat.png' width='70' style='padding-top: 25px;padding-left: 11px;'>
                       <div class='media-body'>
                         <h5 class='mt-0'><a href='category.php?theme=$res[id]'>$res[name]</a></h5>
-                        <div class='categories'>
-                        <div class='cat1'>";
+                        <div class='categories row'>
+                        <div class='cat1 col-sm-3'>";
                             get_category($db,$res[id],"1,3");
                         echo    "</div>
-                        <div class='cat2'>";
+                        <div class='cat2 col-sm-3'>";
                         get_category($db,$res[id],"4,3");
                         echo  "</div>
-                            <div class='cat3'>";
+                            <div class='cat3 col-sm-3'>";
                         get_category($db,$res[id],"7,3");
                         echo    "</div>
                         </div>

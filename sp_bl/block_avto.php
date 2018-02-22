@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="login/index.php">
+        <form method="post" action="login/index.php" id="avtorization-form">
           <div class="form-group">
             <input type="text" class="form-control bg-dark text-white" placeholder="Логин или email" name="el" required>
           </div>
@@ -38,7 +38,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" id="reg" action="reg/index.php">
+        <form method="post" id="reg" action="reg/index.php" id="avtorization-form">
          <div class="form-group">
             <input type="text" name="login" class="form-control bg-dark text-white" required placeholder="Логин" id="login">
           </div>

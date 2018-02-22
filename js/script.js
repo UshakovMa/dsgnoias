@@ -16,7 +16,7 @@ $(document).ready(function() {
 };
     
     
- 	    $('#ajax-form').submit(function(e) {
+ 	    $('#avtorization-form').submit(function(e) {
         var $form = $(this);
         $.ajax({
           type: $form.attr('method'),
