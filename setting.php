@@ -28,25 +28,36 @@
                    <span>Текущий аватар:</span>
                 <img src="<?php echo $ava;?>" class="d-block" width="175px" height="175px" alt=""><br>
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button></div>
+                <?php 
+                      $se = get_setings($db, $_COOKIE[id]);
+                      ?>
                 <form action="file/user_inf.php" class="col-sm" method="post" id="avtorization-form">
                 <div class="input-group mb-3">
-                  <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус"><hr>
+                  <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус" value="<?php echo $se[status];
+if($se[sex] == 1){
+    $ch1 = "checked";
+}else if($se[sex] == 2){
+    $ch2 = "checked";
+}else{
+    $ch3 = "checked";
+}
+                                                                                                                             ?>"><hr>
                 </div><span class="text-secondary">Отображается под вашим ником в сообщениях</span><hr>
                 <span style="margin-right: 10%">Пол:</span><br>
-                    <input id="male" type="radio" name="gender" value="1">
+                    <input id="male" type="radio" name="gender" value="1" <?php echo $ch1;?>>
                     <label for="male">Мужской</label>
-                    <input id="female" type="radio" name="gender" value="2">
+                    <input id="female" type="radio" name="gender" value="2" <?php echo $ch2;?>>
                     <label for="female">Женский</label>
-                    <input id="not-gender" type="radio"  name="gender" value="0">
+                    <input id="not-gender" type="radio"  name="gender" value="0" <?php echo $ch3;?>>
                     <label for="not-gender">Не указано</label><hr>
                   <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Настоящие имя"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" name="gname" placeholder="Настоящие имя" value="<?php echo $se[name];?>"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Род занятий"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" name="de" placeholder="Род занятий" value="<?php echo $se[prof];?>"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control bg-dark text-white w-100" placeholder="Город"><hr>
+                  <input type="text" class="form-control bg-dark text-white w-100" name="city" placeholder="Город" value="<?php echo $se[city];?>"><hr>
                 </div>
                 <button type="submit" class="btn btn-outline-success fr">Сохранить изменения</button><br>
                       </form>

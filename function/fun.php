@@ -132,4 +132,12 @@ function get_ava($db, $id){
     }
     return $res;
 }
+
+function set_settings($db, $city, $name, $de, $gen, $st){
+    mysqli_query($db, "UPDATE `settings` SET `city` = '$city', `sex` = '$gen', `prof` = '$de', `name` = '$name', `status` = '$st' WHERE `id` = '$_COOKIE[id]'");
+}
+function get_setings($db, $id){
+    $query = mysqli_query($db, "SELECT * FROM `settings` WHERE `id` = '$id'");
+    return mysqli_fetch_assoc($query);
+}
 ?>

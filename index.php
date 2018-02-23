@@ -1,6 +1,7 @@
 <?php
     include "db/conn.php";
     include "check_acc/check.php";
+    include "config/cnf.php";
 ?>
 <!doctype html>
 <html lang="ru">
