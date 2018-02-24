@@ -6,7 +6,7 @@
                 <?php $q = get_admin($db);
                     
                     while($res = mysqli_fetch_assoc($q)){
-                        if($res[last_online] * 60 * 5 < time()){
+                        if($res[last_online] > time() - 60*5){
                             $b_o = "<div class='online'></div>";
                         }else{
                             $b_o = "";
