@@ -44,7 +44,7 @@ function views_all_theme($db){
                         <h5 class='mt-0'><a href='category.php?theme=$res[id]'>$res[name]</a></h5>
                         <div class='categories row'>
                         <div class='cat1 col-sm-3'>";
-                            get_category($db,$res[id],"1,3");
+                            get_category($db,$res[id],"0,3");
                         echo    "</div>
                         <div class='cat2 col-sm-3'>";
                         get_category($db,$res[id],"4,3");
