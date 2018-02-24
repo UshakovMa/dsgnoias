@@ -3,22 +3,25 @@
                  <li class="list-group-item d-flex justify-content-center bg-dark align-items-center" style="background-color: #FFC107 !important">
                     <span class="font-weight-bold">Команда форума:</span>
                   </li>
-                <?php $q = get_admin($db);
-                    
+                <?php 
+                    $q = get_admin($db);
                     while($res = mysqli_fetch_assoc($q)){
-                        if($res[last_online] > time() - 60*5){
-                            $b_o = "<div class='online'></div>";
-                        }else{
-                            $b_o = "";
-                        }
+                        
                         $admin_ava = get_ava($db, $res[id]);
                         echo "<li class='list-group-item d-flex justify-content-left bg-dark align-items-center col-'>
                         <div class='d-flex''>
+                        
                     <img src='$admin_ava' width='40' height='40' class='img-circle pull-left' alt=''>
-                    $b_o
+                    <div class='online'></div>
                     </div>&nbsp;
                     <div class='user-information'><span class='text-white font-weight-bold'><a href='user.php?id=$res[id]'>$res[login]</a></span>
                         <span class='text-warning'>Админ</span></div>
+                  </li>";
+                        $a = "g";
+                    }
+                    if($a == ""){
+                        echo "<li class='list-group-item d-flex justify-content-left bg-dark align-items-center text-white'>
+                        Никого из админов нету онлайн :(
                   </li>";
                     }
                     ?>

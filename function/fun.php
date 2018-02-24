@@ -111,7 +111,8 @@ function get_post_id($db, $id){
 }
 
 function get_admin($db){
-    $query = mysqli_query($db, "SELECT * FROM `users` WHERE `comand` = '1' LIMIT 5");
+    $t = time() - 60*5;
+    $query = mysqli_query($db, "SELECT * FROM `users` WHERE `comand` = '1' and `last_online` > '$t' LIMIT 5");
     return $query;
 }
 
