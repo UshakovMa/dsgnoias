@@ -17,7 +17,7 @@ function parse_bb_code($text)	{
 	
 	$text = preg_replace('/\[img\s*\]([^\]\[]+)\[\/img\]/', "<img src='$1'/>", $text);
 	$text = preg_replace('/\[img\s*=\s*([\'"]?)([^\'"\]]+)\1\]/', "<img src='$2'/>", $text);
-	
+    
 	return $text;
 }
 ?>

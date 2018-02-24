@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   global $tmp_path;
 
   // Ограничение по ширине в пикселях
-  $max_thumb_size = 222;
-  $max_size = 222;
+  $max_thumb_size = 400;
+  $max_size = 400;
  
   // Качество изображения по умолчанию
   if ($quality == null)

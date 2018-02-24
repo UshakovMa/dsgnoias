@@ -66,6 +66,12 @@ function get_category($db,$th,$lim){
      }
 }
 
+function get_category_name($db,$th){
+    $query = mysqli_query($db, "SELECT `name` FROM `category` WHERE `id` = '$th'");
+    $query = mysqli_fetch_assoc($query);
+    return $query[name];
+}
+
 function info_user($db,$id){
     $query = mysqli_query($db, "SELECT `date`,`login`,`last_online`,`verificate` FROM `users` WHERE `id` = '$id'");
     $query = mysqli_fetch_assoc($query);
@@ -139,5 +145,10 @@ function set_settings($db, $city, $name, $de, $gen, $st){
 function get_setings($db, $id){
     $query = mysqli_query($db, "SELECT * FROM `settings` WHERE `id` = '$id'");
     return mysqli_fetch_assoc($query);
+}
+
+function views_p($db, $v, $id){
+    $v++;
+    mysqli_query($db, "UPDATE `post` SET `views` = '$v' WHERE `id` = '$id'");
 }
 ?>

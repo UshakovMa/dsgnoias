@@ -5,7 +5,7 @@ if($_GET[id] == "" && $_GET[id] == null){
     header("Location: index.php");
 }
 $query = get_post_id($db,$_GET[id]);
-
+views_p($db, $query[views], $_GET[id]);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -16,8 +16,8 @@ $query = get_post_id($db,$_GET[id]);
         <?php include "sp_bl/bread.php"?>
    <blockquote class="blockquote text-white">
   <p class="mb-0"><?php echo $query[title]?></p>
-  <footer class="blockquote-footer">Тема в разделе <a href="#">Требуются спамеры</a>, создана пользователем <a href="#">TMT</a>, <a href="#">13 мая 2017</a>. (Поднята Понедельник в 08:54)<br/>    
-Просмотров: 32734</footer>
+  <footer class="blockquote-footer">Тема в разделе <a href="category.php?theme=<?php echo $query[theme_id] . "&category=" . $query[cat_id];?>"><?php echo get_category_name($db, $query[cat_id]);?></a>, создана пользователем <a href="user.php?id=<?php echo $query[author]?>"><?php echo get_name($query[author],$db)?></a>, <?php echo date('d.m.o в H:i',$query[date_create])?>.<br/>    
+Просмотров: <?php echo $query[views];?></footer>
 </blockquote>
    <div class="reklama" style="width: 100%">
        <img src="img/csgo.cash.jpg" style="width: 100%;" alt="">
@@ -48,7 +48,7 @@ $query = get_post_id($db,$_GET[id]);
          <div class="col-12 col-md-3 text-center bg-dark">
               <span class="nick-name text-white"><?php echo get_name($query[author],$db)?></span><br>
               <span class="them text-danger">Редактор</span><br>
-              <img src="img/avatar.png" alt="">
+              <img src="<?php echo get_ava($db,$query[author])?>" alt="" class="avatar-img rounded-circle" style="width: 100%">
               <div class="soc-icon">
                   <a href="#" class="btn btn-lg"><i class="far fa-lightbulb"></i></a>
                   <a href="#" class="btn btn-lg"><i class="fab fa-vk"></i></a>
@@ -81,7 +81,7 @@ $query = get_post_id($db,$_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
               
-               <span class="text-white"><?php echo $query[msg];?></span>
+               <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
               
                 <br>
               <div class="alert" role="alert">
@@ -116,7 +116,7 @@ $query = get_post_id($db,$_GET[id]);
                 </div><hr>
           </div>
           <div class="media bg-dark col-12 col-sm-12 col-md-12">
-                  <img class="mr-3 rounded-circle" src="img/avatar.png" width="75" height="75" alt="ava">
+                  <img class="mr-3 rounded-circle" src="<?php echo $ava;?>" width="75" height="75" alt="ava">
                   <div class="media-body">
                     <h5 class="mt-0">
                     <button class="btn" id="bold"><i class="fas fa-bold"></i></button>
