@@ -34,6 +34,19 @@ label {
 	font-size: 13px;
 }
 
+.editor{
+    background-color: #343A40;
+    color: #FFC107;
+    border-radius: .35rem;
+    border: 1px solid #eee;
+    height: 150px;
+    overflow: auto;
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 10px;
+}
+
 
 label:before {
 	content: "";

@@ -114,22 +114,23 @@ $query = get_post_id($db,$_GET[id]);
                   <a href="#" class="btn fr">Ник в ответ</a>
                   <a href="#" class="btn fr">Ответить</a>
                 </div><hr>
-                <div class="media">
-                  <img class="mr-3" src="img/avatar.png" width="50" height="50" alt="ava">
+          </div>
+          <div class="media bg-dark col-12 col-sm-12 col-md-12">
+                  <img class="mr-3 rounded-circle" src="img/avatar.png" width="75" height="75" alt="ava">
                   <div class="media-body">
                     <h5 class="mt-0">
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
-                    <a href="#" class="btn"><i class="far fa-envelope"></i></a>
+                    <button class="btn"><i class="fas fa-bold"></i></button>
+                    <button class="btn"><i class="fas fa-italic"></i></button>
+                    <button class="btn"><i class="fas fa-underline"></i></button>
+                    <button class="btn"><i class="fas fa-link"></i></button>
+                    <button class="btn"><i class="fas fa-strikethrough"></i></button>
+                    <button class="btn"><i class="fas fa-code"></i></button>
+                    <button class="btn"><i class="fas fa-quote-right"></i></button>
+                    <button class="btn"><i class="fas fa-image"></i></button>                    
                     </h5>
-                    <textarea class="form-control bg-dark text-white"  aria-label="With textarea"></textarea><br>
-                    <button type="button" class="btn btn-outline-success" style="float: right">Отправить</button>
+                    <?php include "sp_bl/editor.php";?>
                   </div>
                 </div>
-          </div>
     </div>
     </div><br>
     <?php include "sp_bl/bl_foot.php";?>
