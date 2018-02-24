@@ -33,6 +33,7 @@
                       ?>
                 <form action="file/user_inf.php" class="col-sm" method="post" id="avtorization-form">
                 <div class="input-group mb-3">
+                    <p>Статус:</p>
                   <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус" value="<?php echo $se[status];
 if($se[sex] == 1){
     $ch1 = "checked";
@@ -41,7 +42,7 @@ if($se[sex] == 1){
 }else{
     $ch3 = "checked";
 }
-                                                                                                                             ?>"><hr>
+?>"><hr>
                 </div><span class="text-secondary">Отображается под вашим ником в сообщениях</span><hr>
                 <span style="margin-right: 10%">Пол:</span><br>
                     <input id="male" type="radio" name="gender" value="1" <?php echo $ch1;?>>
@@ -51,12 +52,15 @@ if($se[sex] == 1){
                     <input id="not-gender" type="radio"  name="gender" value="0" <?php echo $ch3;?>>
                     <label for="not-gender">Не указано</label><hr>
                   <div class="input-group mb-3">
+                  <p>Настоящие имя:</p>
                   <input type="text" class="form-control bg-dark text-white w-100" name="gname" placeholder="Настоящие имя" value="<?php echo $se[name];?>"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p>Род занятий:</p>
                   <input type="text" class="form-control bg-dark text-white w-100" name="de" placeholder="Род занятий" value="<?php echo $se[prof];?>"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p>Город:</p>
                   <input type="text" class="form-control bg-dark text-white w-100" name="city" placeholder="Город" value="<?php echo $se[city];?>"><hr>
                 </div>
                 <button type="submit" class="btn btn-outline-success fr">Сохранить изменения</button><br>

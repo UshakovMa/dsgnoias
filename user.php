@@ -42,7 +42,7 @@ $ava = get_ava($db, $_COOKIE[id]);
                             echo "Был в сети ".date('d.m.o в H:i',$res['last_online'])." мин назад";
                             }?>
                             </span><br>
-                            <small class="text-muted" id="item1_content" contenteditable="true" spellcheck="false"><?php echo $status; ?></small><br>
+                            <small class="text-muted" id="item1_content" contenteditable="true" spellcheck="false"><?php echo $status; ?></small>
                             <button id="save">Сохранить</button>
                     </div><hr>
                     <div class="alert text-white" role="alert">

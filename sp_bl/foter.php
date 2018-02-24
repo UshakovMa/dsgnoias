@@ -7,5 +7,7 @@
     
     <script src="js/script.js"></script>
     <script src="js/noty.js"></script>
+    <script src="js/but.js"></script>
+    
 
 

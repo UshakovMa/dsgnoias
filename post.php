@@ -119,14 +119,14 @@ $query = get_post_id($db,$_GET[id]);
                   <img class="mr-3 rounded-circle" src="img/avatar.png" width="75" height="75" alt="ava">
                   <div class="media-body">
                     <h5 class="mt-0">
-                    <button class="btn"><i class="fas fa-bold"></i></button>
-                    <button class="btn"><i class="fas fa-italic"></i></button>
-                    <button class="btn"><i class="fas fa-underline"></i></button>
-                    <button class="btn"><i class="fas fa-link"></i></button>
-                    <button class="btn"><i class="fas fa-strikethrough"></i></button>
-                    <button class="btn"><i class="fas fa-code"></i></button>
-                    <button class="btn"><i class="fas fa-quote-right"></i></button>
-                    <button class="btn"><i class="fas fa-image"></i></button>                    
+                    <button class="btn" id="bold"><i class="fas fa-bold"></i></button>
+                    <button class="btn" id="italic"><i class="fas fa-italic"></i></button>
+                    <button class="btn" id="underline"><i class="fas fa-underline"></i></button>
+                    <button class="btn" id="link"><i class="fas fa-link"></i></button>
+                    <button class="btn" id="strikethrough"><i class="fas fa-strikethrough"></i></button>
+                    <button class="btn" id="code"><i class="fas fa-code"></i></button>
+                    <button class="btn" id="quote"><i class="fas fa-quote-right"></i></button>
+                    <button class="btn" id="image_b"><i class="fas fa-image"></i></button>                    
                     </h5>
                     <?php include "sp_bl/editor.php";?>
                   </div>
