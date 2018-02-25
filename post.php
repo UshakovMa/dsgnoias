@@ -86,9 +86,8 @@ views_p($db, $query[views], $_GET[id]);
                 <br>
               <div class="alert" role="alert">
                   <a href="#" class="btn">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
-                  <a href="#" class="btn">Пожаловатся</a>
-                  <a href="#" class="btn fr">Ник в ответ</a>
-                  <a href="#" class="btn fr">Ответить</a>
+                  <button class='btn'>Пожаловатся</button>
+                  <button class='btn fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
                 </div>
           </div><hr>
           <div class="col-12 col-md-3 text-center bg-dark">
