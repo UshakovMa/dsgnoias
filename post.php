@@ -45,7 +45,7 @@ views_p($db, $query[views], $_GET[id]);
 </nav>
 </div>
       <div class="row justify-content-around margin-0">
-         <div class="col-12 col-md-3 text-center bg-dark">
+         <div class="col-12 col-md-3 text-center bg-dark"><br>
               <span class="nick-name text-white"><?php echo get_name($query[author],$db)?></span><br>
               <span class="them text-danger">Редактор</span><br>
               <img src="<?php echo get_ava($db,$query[author])?>" alt="" class="avatar-img rounded-circle" style="width: 100%">
@@ -80,14 +80,22 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
-              
-               <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
-              
+<<<<<<< HEAD
+              <br>
+               <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
                 <br>
               <div class="alert" role="alert">
-                  <a href="#" class="btn">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
-                  <button class='btn'>Пожаловатся</button>
-                  <button class='btn fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
+                  <button class='btn btn-dark' id='edit_button'>Редактировать</button>
+                  <span class="text-secondary btn">24 июнь 2017</span>
+=======
+              <br><h5 class="text-white text-center">Заголовок</h5>
+               <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
+                <br>
+              <div class="alert" role="alert">
+                  <a href="#" class="btn btn-dark">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
+                  <button class='btn btn-dark'>Пожаловатся</button>
+                  <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
                 </div>
           </div><hr>
           <div class="col-12 col-md-3 text-center bg-dark">
@@ -121,14 +129,15 @@ views_p($db, $query[views], $_GET[id]);
                   <img class='mr-3 rounded-circle' src='$ava' width='75' height='75' alt='ava'>
                   <div class='media-body'>
                     <h5 class='mt-0'>
-                    <button class='btn' id='bold'><i class='fas fa-bold'></i></button>
-                    <button class='btn' id='italic'><i class='fas fa-italic'></i></button>
-                    <button class='btn' id='underline'><i class='fas fa-underline'></i></button>
-                    <button class='btn' id='link'><i class='fas fa-link'></i></button>
-                    <button class='btn' id='strikethrough'><i class='fas fa-strikethrough'></i></button>
-                    <button class='btn' id='code'><i class='fas fa-code'></i></button>
-                    <button class='btn' id='quote'><i class='fas fa-quote-right'></i></button>
-                    <button class='btn' id='image_b'><i class='fas fa-image'></i></button>                    
+                    <button class='btn btn-dark' id='bold'><i class='fas fa-bold'></i></button>
+                    <button class='btn btn-dark' id='italic'><i class='fas fa-italic'></i></button>
+                    <button class='btn btn-dark' id='underline'><i class='fas fa-underline'></i></button>
+                    <button class='btn btn-dark' id='link'><i class='fas fa-link'></i></button>
+                    <button class='btn btn-dark' id='strikethrough'><i class='fas fa-strikethrough'></i></button>
+                    <button class='btn btn-dark' id='code'><i class='fas fa-code'></i></button>
+                    <button class='btn btn-dark' id='quote'><i class='fas fa-quote-right'></i></button>
+                    <button class='btn btn-dark' id='image_b'><i class='fas fa-image'></i></button>
+                    <button class='btn btn-dark' id='emoji'><i class='far fa-smile'></i></button>
                     </h5>";
                 include 'sp_bl/editor.php';
                 echo "</div>

@@ -207,6 +207,14 @@ ul > li > .dropdown-toggle::after{
     display: none;
 }
 
+.msg-block{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    min-height: 500px;
+    background-color: #1D2124;
+}
+
 .img-navbar-logo{
     width: 7rem;
 }
@@ -222,7 +230,6 @@ ul > li > .dropdown-toggle::after{
 .modal-footer{
     border-top: 1px solid #FFC107;
 }
-
 .img-circle{
     border-radius: 50%;
 }

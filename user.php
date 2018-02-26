@@ -30,7 +30,10 @@ $ava = get_ava($db, $_COOKIE[id]);
        <div class="row no-gutters justify-content-between">
              <div class="col-12 col-md-3 bg-dark user-block-avatar"><br>
                     <img src="<?php echo $ava;?>" class="avatar-img rounded mx-auto d-block" alt="avatar"><br>
-                    <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='setting.php' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }?>
+                    <?php if($_COOKIE[id] != null && null == $_GET[id]){echo "<a href='setting.php' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Редактировать</a>"; }
+                 else{
+                    echo "<a href='msg.php' style='text-decoration: none' class='btn btn-dark btn-lg btn-block'>Написать сообщение</a>"; 
+                 }?>
             </div>
               <div class="col-12 col-sm-12 col-md-8 bg-dark" style="border-radius: .3rem;">
                     <div class="alert text-white" role="alert">
@@ -42,7 +45,7 @@ $ava = get_ava($db, $_COOKIE[id]);
                             echo "Был в сети ".date('d.m.o в H:i',$res['last_online'])." мин назад";
                             }?>
                             </span><br>
-                            <small class="text-muted" id="item1_content" contenteditable="true" spellcheck="false"><?php echo $status; ?></small>
+                            <small class="text-muted"><?php echo $status; ?></small>
                             <button id="save">Сохранить</button>
                     </div><hr>
                     <div class="alert text-white" role="alert">

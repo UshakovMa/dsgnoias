@@ -10,13 +10,7 @@
                 <a class="nav-link" href="#">Маркет</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ЧАТ</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">FAQ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Правила форума</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Поддержка</a>

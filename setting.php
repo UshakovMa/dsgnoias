@@ -26,7 +26,7 @@
                   <div class="row">
                    <div class="avatar-edit col-sm">
                    <span>Текущий аватар:</span>
-                <img src="<?php echo $ava;?>" class="d-block" width="175px" height="175px" alt=""><br>
+                <img src="<?php echo $ava;?>" class="d-block rounded-circle" width="175px" height="175px" alt=""><br>
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button></div>
                 <?php 
                       $se = get_setings($db, $_COOKIE[id]);
@@ -68,55 +68,37 @@ if($se[sex] == 1){
                       </div>
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-contact-info" role="tabpanel" aria-labelledby="v-pills-contact-info-tab">
-                      <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Jabber:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Jabber">
+                  <div class="row">
+                      <div class="col-sm">
+                  <div class="input-group mb-3">
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Jabber">
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">ВКонтакте:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="ВКонтакте"><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="ВКонтакте"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Steam:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Steam"><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Steam"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Telegram:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Telegram"><hr>
-                </div><h6 class="text-secondary">Логин в телеграме</h6><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Telegram"><hr>
+                </div>
+                    </div>
+                    <div class="col-sm">
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Skype:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Skype"><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Skype"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">WMID:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="WMID"><hr>
-                </div><h6 class="text-secondary">Введите WMID, состоящий из 12 цифр</h6><hr>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">ICQ:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="ICQ"><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="WMID"><hr>
                 </div>
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="btn">Twitter:</span>
-                  </div>
-                  <input type="text" class="form-control bg-dark text-white" placeholder="Twitter"><hr>
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="ICQ"><hr>
                 </div>
-                <button class="btn btn-outline-success">Сохранить изменения</button>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Twitter"><hr>
+                </div>
+                    </div>
+                        </div>
+                <button class="btn btn-outline-success fr">Сохранить изменения</button>
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                       <span>Язык:</span>
