@@ -81,6 +81,7 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
 <<<<<<< HEAD
+<<<<<<< HEAD
               <br>
                <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
                 <br>
@@ -88,11 +89,16 @@ views_p($db, $query[views], $_GET[id]);
                   <button class='btn btn-dark' id='edit_button'>Редактировать</button>
                   <span class="text-secondary btn">24 июнь 2017</span>
 =======
+=======
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
               <br><h5 class="text-white text-center">Заголовок</h5>
                <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
                 <br>
               <div class="alert" role="alert">
                   <a href="#" class="btn btn-dark">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
+<<<<<<< HEAD
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
+=======
 >>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
                   <button class='btn btn-dark'>Пожаловатся</button>
                   <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
