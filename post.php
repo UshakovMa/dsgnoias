@@ -80,12 +80,35 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
+<<<<<<< HEAD
               <br>
                <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
                 <br>
               <div class="alert" role="alert">
                   <button class='btn btn-dark' id='edit_button'>Редактировать</button>
                   <span class="text-secondary btn">24 июнь 2017</span>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <br>
+               <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
+                <br>
+              <div class="alert" role="alert">
+                  <button class='btn btn-dark' id='edit_button'>Редактировать</button>
+                  <span class="text-secondary btn">24 июнь 2017</span>
+=======
+=======
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
+              <br><h5 class="text-white text-center">Заголовок</h5>
+               <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
+                <br>
+              <div class="alert" role="alert">
+                  <a href="#" class="btn btn-dark">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
+<<<<<<< HEAD
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
+=======
+>>>>>>> b6f2c66245fa550311aba73f16a804c28bbac456
+>>>>>>> 4c315a29f4bac10b841be991e2087199ae4995cf
                   <button class='btn btn-dark'>Пожаловатся</button>
                   <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
                 </div>
@@ -131,6 +154,7 @@ views_p($db, $query[views], $_GET[id]);
                     <button class='btn btn-dark' id='code'><i class='fas fa-code'></i></button>
                     <button class='btn btn-dark' id='quote'><i class='fas fa-quote-right'></i></button>
                     <button class='btn btn-dark' id='image_b'><i class='fas fa-image'></i></button>
+<<<<<<< HEAD
                     <button class='btn btn-dark dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-smile'></i></button>
                       <div class='dropdown-menu'>
                         <div class='card card-body bg-dark text-white border-0 emoji-style'>
@@ -138,6 +162,9 @@ views_p($db, $query[views], $_GET[id]);
                             <div id='transformed'></div>
                           </div>
                         </div>
+=======
+                    <button class='btn btn-dark' id='emoji'><i class='far fa-smile'></i></button>
+>>>>>>> 4c315a29f4bac10b841be991e2087199ae4995cf
                     </h5>";
                 include 'sp_bl/editor.php';
                 echo "</div>
