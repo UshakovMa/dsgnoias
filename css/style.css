@@ -203,8 +203,22 @@ ul > li > .dropdown-toggle::after{
     margin-bottom: 20px;
 }
 
+.emoji-style{
+    width: 250px;
+    max-height: 350px;
+    overflow: auto;
+}
+
 #save{
     display: none;
+}
+
+.msg-block{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    min-height: 500px;
+    background-color: #1D2124;
 }
 
 .img-navbar-logo{
@@ -222,7 +236,6 @@ ul > li > .dropdown-toggle::after{
 .modal-footer{
     border-top: 1px solid #FFC107;
 }
-
 .img-circle{
     border-radius: 50%;
 }

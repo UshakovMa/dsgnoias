@@ -7,5 +7,5 @@ $city = $_POST[city];
 $de = $_POST[de];
 $name = $_POST[gname];
 set_settings($db, $city, $name, $de, $gen, $st);
-echo "warning@OK";
+echo "success@Настройки сохранены";
 ?>
