@@ -45,7 +45,7 @@ views_p($db, $query[views], $_GET[id]);
 </nav>
 </div>
       <div class="row justify-content-around margin-0">
-         <div class="col-12 col-md-3 text-center bg-dark">
+         <div class="col-12 col-md-3 text-center bg-dark"><br>
               <span class="nick-name text-white"><?php echo get_name($query[author],$db)?></span><br>
               <span class="them text-danger">Редактор</span><br>
               <img src="<?php echo get_ava($db,$query[author])?>" alt="" class="avatar-img rounded-circle" style="width: 100%">
@@ -80,14 +80,13 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
-              
+              <br><h5 class="text-white text-center">Заголовок</h5>
                <span class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></span>
-              
                 <br>
               <div class="alert" role="alert">
-                  <a href="#" class="btn">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
-                  <button class='btn'>Пожаловатся</button>
-                  <button class='btn fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
+                  <a href="#" class="btn btn-dark">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
+                  <button class='btn btn-dark'>Пожаловатся</button>
+                  <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
                 </div>
           </div><hr>
           <div class="col-12 col-md-3 text-center bg-dark">
