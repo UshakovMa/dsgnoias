@@ -25,9 +25,9 @@
                   <div class="tab-pane fade text-white show active" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
                   <div class="row">
                    <div class="avatar-edit col-sm">
-                   <span>Текущий аватар:</span>
-                <img src="<?php echo $ava;?>" class="d-block rounded-circle" width="175px" height="175px" alt=""><br>
-                <button class="btn btn-outline-success" data-toggle="modal" data-target="#chenge-ava"><i class="far fa-edit"></i> Изменить аватар</button></div>
+                   <h6 style="text-align:center;">Текущий аватар:</h6>
+                <a data-toggle="modal" class="edit_avatarka" data-target="#chenge-ava"><img src="<?php echo $ava;?>" class="rounded-circle mt-3" width="250px" height="250px" alt=""><div class="edit_avatarka_plus"><i class="fas fa-pencil-alt"></i></div></a>
+                </div>
                 <?php 
                       $se = get_setings($db, $_COOKIE[id]);
                       ?>
@@ -71,29 +71,37 @@ if($se[sex] == 1){
                   <div class="row">
                       <div class="col-sm">
                   <div class="input-group mb-3">
+                  <p class="d-block w-100">Jabber:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="Jabber">
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">ВКонтакте:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="ВКонтакте"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">Steam:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="Steam"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">Telegram:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="Telegram"><hr>
                 </div>
                     </div>
                     <div class="col-sm">
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">Skype:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="Skype"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">WMID:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="WMID"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">ICQ:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="ICQ"><hr>
                 </div>
                 <div class="input-group mb-3">
+                 <p class="d-block w-100">Twitter:</p>
                   <input type="text" class="form-control bg-dark text-white rounded" placeholder="Twitter"><hr>
                 </div>
                     </div>
@@ -200,7 +208,7 @@ if($se[sex] == 1){
            <form class="box" method="post" action="file/ph.php" 
            enctype="multipart/form-data">
            <div class="d-block">
-           <img src="<?php echo $ava;?>" width="100" height="100" style="margin-bottom: 5px;">
+           <img src="<?php echo $ava;?>" class="rounded-circle" width="100" height="100" style="margin-bottom: 5px;">
             <input type="file" name="avatar" class="textCtrl avatarUpload" id="ctrl_avatar" title="Поддерживаемые форматы: JPEG, PNG, GIF" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
             <label for="ctrl_avatar" class="btn btn-success clear"><span class="buttonText"><i class="far fa-user-circle"></i> Загрузить новый аватар</span></label></div>
             <div class="modal-footer">

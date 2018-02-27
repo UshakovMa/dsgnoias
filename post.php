@@ -84,7 +84,7 @@ views_p($db, $query[views], $_GET[id]);
                <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
                 <br>
               <div class="alert" role="alert">
-                  <button class='btn btn-dark' id='edit_button'>Редактировать</button>
+                  <a class='btn btn-dark' href="editor_post.php">Редактировать</a>
                   <span class="text-secondary btn">24 июнь 2017</span>
                   <button class='btn btn-dark'>Пожаловатся</button>
                   <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
@@ -93,7 +93,7 @@ views_p($db, $query[views], $_GET[id]);
           <div class="col-12 col-md-3 text-center bg-dark">
               <span class="nick-name text-white">NICK-NAME</span><br>
               <span class="them text-danger">Редактор</span><br>
-              <img src="img/avatar.png" alt="">
+              <img src="img/avatar.png" alt="" class="rounded-circle">
               <ul class="text-left">
                   <li class="text-warning">12 <span class="text-white">Сообщений</span></li>
                   <li class="text-warning">43 <span class="text-white">Симпатий</span></li>
@@ -106,7 +106,7 @@ views_p($db, $query[views], $_GET[id]);
               </div>
           </div>
           <div class="col-12 col-sm-12 col-md-9 bg-dark">
-              <span class="text-white">
+              <span class="text-white min-h">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolores consequatur, rem, assumenda dolore alias aliquam itaque beatae reprehenderit accusantium officia accusamus. Quae architecto corrupti cumque, sit! A necessitatibus, recusandae repudiandae fugit maxime, ea ab, modi, culpa error atque quasi.
               </span><br>
               <div class="alert" role="alert">
@@ -120,7 +120,7 @@ views_p($db, $query[views], $_GET[id]);
           <?php
           if($_COOKIE[id] != ""){
             echo "<div class='media bg-dark col-12 col-sm-12 col-md-12'>
-                  <img class='mr-3 rounded-circle' src='$ava' width='75' height='75' alt='ava'>
+                  <img class='mr-3 mt-5 rounded-circle' src='$ava' width='75' height='75' alt='ava'>
                   <div class='media-body'>
                     <h5 class='mt-0'>
                     <button class='btn btn-dark' id='bold'><i class='fas fa-bold'></i></button>
@@ -131,13 +131,6 @@ views_p($db, $query[views], $_GET[id]);
                     <button class='btn btn-dark' id='code'><i class='fas fa-code'></i></button>
                     <button class='btn btn-dark' id='quote'><i class='fas fa-quote-right'></i></button>
                     <button class='btn btn-dark' id='image_b'><i class='fas fa-image'></i></button>
-                    <button class='btn btn-dark dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='far fa-smile'></i></button>
-                      <div class='dropdown-menu'>
-                        <div class='card card-body bg-dark text-white border-0 emoji-style'>
-                            <div id='original' class='d-none'></div>
-                            <div id='transformed'></div>
-                          </div>
-                        </div>
                     </h5>";
                 include 'sp_bl/editor.php';
                 echo "</div>

@@ -36,7 +36,7 @@ label {
 
 .editor{
     background-color: #343A40;
-    color: #FFC107;
+    color: #fff;
     border-radius: .35rem;
     border: 1px solid #eee;
     height: 150px;
@@ -109,6 +109,7 @@ a:hover{
     cursor: pointer;
 }
 
+
 .user-block-avatar{
     border-radius: .3rem; 
     max-height: 318px;
@@ -141,6 +142,32 @@ a:hover{
 
 .dropdown-item{
     color: #f8f9fa;
+}
+
+.edit_avatarka{
+    margin-left: 15%;
+}
+
+.edit_avatarka_plus{
+    position: absolute;
+    left: 70px;
+    top: 43px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: none;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI';
+    line-height: 250px;
+    text-align: center;
+    color: #fff;
+}
+
+.edit_avatarka:hover .edit_avatarka_plus{
+    display: block;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 
 select{
@@ -256,6 +283,11 @@ li{
     width: 100%;
 }
 
+.min-h{
+    display: block;
+    min-height: 300px !important;
+}
+
 .lc-walls{
     width: 100%;
     min-height: 200px;
@@ -281,6 +313,7 @@ li{
 .online{
     width: 7px;
     height: 7px;
+    margin-left: -5px;
     border-radius: 50%;
     background-color: greenyellow;
 }
@@ -288,16 +321,37 @@ li{
 .margin-0{
     margin: 0!important;
 }
+@media all and (max-width: 1200px){
+    .edit_avatarka_plus{
+        left: 59px;
+    }
+}
 
 @media all and (max-width: 1024px){
     .dropdown-menu{
         left: -70px !important;
+    }    
+}
+
+@media all and (max-width: 991px){
+    .edit_avatarka_plus{
+        left: 81px;
     }
 }
 
 @media all and (max-width: 768px){
     .dropdown-menu{
     left: 0 !important;
+    }
+    
+    .edit_avatarka_plus{
+        left: 67px;
+    }
+}
+
+@media all and (max-width: 575px){
+    .edit_avatarka_plus{
+        left: 86px;
     }
 }
 
@@ -311,4 +365,11 @@ li{
     .img-categories{
         display: none;
     }
+    
+    .edit_avatarka_plus{
+        left: 15px;
+    }
+    .edit_avatarka{
+    margin-left: 0;
+}
 }

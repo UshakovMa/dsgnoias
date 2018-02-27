@@ -38,7 +38,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" id="reg" action="reg/index.php" id="avtorization-form">
+        <form method="post" id="avtorization-form1" action="reg/index.php">
          <div class="form-group">
             <input type="text" maxlength="15" name="login" class="form-control bg-dark text-white" required placeholder="Логин" id="login">
           </div>
@@ -46,8 +46,9 @@
             <input type="email" name="email" class="form-control bg-dark text-white" required placeholder="Почта">
           </div>
           <div class="form-group">
-            <input type="password" name="pass" class="form-control bg-dark text-white" required placeholder="Пароль">
+            <input type="password" id="password" name="pass" class="form-control bg-dark text-white" required placeholder="Пароль">
           </div>
+                <span id="pwdMeter" class="neutral"></span>
           <div class="form-group">
               <input id="rules" type="checkbox" name="check" value="rules">
               <label for="rules"><span class="text-white">Я согласен с <a href="#" class="text-warning">правилами</a> форума</span></label>

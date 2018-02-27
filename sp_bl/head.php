@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/noty.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/metroui.css">
-    <link href="css/emoji.css" rel="stylesheet" type="text/css" />
     <script defer src="js/all.js"></script>
     <title>Forum Get Bootstrap</title>
-    <script type="text/javascript" src="js/emoji.js"></script>
   </head>

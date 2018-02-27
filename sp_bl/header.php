@@ -81,7 +81,7 @@
                     <a class='dropdown-item bg-dark' href='#'>Мои темы</a>
                     <a class='dropdown-item bg-dark' href='#'>Мои сообщения</a>
                     <a class='dropdown-item bg-dark' href='#'>Закладки</a>
-                    <a class='dropdown-item bg-dark' href='setting.php'>Информация обо мне</a>
+                    <a class='dropdown-item bg-dark' href='setting.php'>Настройки</a>
                     <a class='dropdown-item bg-dark' href='#'>Пароль</a>
                     <div class='dropdown-divider'></div>
                     <a class='dropdown-item bg-dark' href='exit'>Выход</a>

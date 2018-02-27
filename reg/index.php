@@ -1,6 +1,7 @@
 <?php
 include "../db/conn.php";
 include "../function/fun.php";
+header("Content-Type: text/html; charset=utf-8");
 if(!empty($_POST)){
     $pass = md5(md5($_POST['pass']));
     $hash = hash_gen($pass,$_POST[login]);
