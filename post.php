@@ -84,7 +84,7 @@ views_p($db, $query[views], $_GET[id]);
                <div class="text-white"><?php echo parse_bb_code($query[msg]);?></div>
                 <br>
               <div class="alert" role="alert">
-                  <a class='btn btn-dark' href="editor_post.php">Редактировать</a>
+                  <a class='btn btn-dark' href="editor_post.php?id=<?php echo $_GET[id];?>">Редактировать</a>
                   <span class="text-secondary btn">24 июнь 2017</span>
                   <button class='btn btn-dark'>Пожаловатся</button>
                   <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>

@@ -14,8 +14,20 @@ $(document).ready(function() {
            
 }).show();
 };
-    $("#password").pwdMeter();
     
+    
+    $( "#edit_text" ).change(function() {
+        $.ajax({
+          type: 'post',
+          url: 'file/upd_text.php',
+          data: {'msg' : $('#edit_text').val()},
+            success: function(response) {
+                $('#upblo').html(response);
+    	}
+        });
+    });
+    
+    $("#password").pwdMeter();
  	    $('#avtorization-form').submit(function(e) {
         var $form = $(this);
         $.ajax({
