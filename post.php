@@ -81,7 +81,7 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
               <br>
-               <div class="text-white"><?php echo $text = preg_replace('#<script[^>]*>.*?</script>#is', '', $query[msg]);?></div>
+               <div class="text-white"><?php echo parse_bb_code($query[msg]);?></div>
                 <br>
               <div class="alert" role="alert">
                   <a class='btn btn-dark' href="editor_post.php">Редактировать</a>
@@ -90,33 +90,45 @@ views_p($db, $query[views], $_GET[id]);
                   <button class='btn btn-dark fr' id='ans' data-name="<?php echo get_name($query[author],$db)?>">Ответить</button>
                 </div>
           </div><hr>
-          <div class="col-12 col-md-3 text-center bg-dark">
-              <span class="nick-name text-white">NICK-NAME</span><br>
-              <span class="them text-danger">Редактор</span><br>
-              <img src="img/avatar.png" alt="" class="rounded-circle">
-              <ul class="text-left">
-                  <li class="text-warning">12 <span class="text-white">Сообщений</span></li>
-                  <li class="text-warning">43 <span class="text-white">Симпатий</span></li>
-                  <li class="text-warning">1 <span class="text-white">Год с нами</span></li>
+          
+          <?php 
+            $rew = get_all_answ($db, $_GET[id]);
+            while($res = mysqli_fetch_assoc($rew)){
+                $na = get_name($res[author],$db);
+                $text = parse_bb_code($res[msg]);
+                $im = get_ava($db,$res[author]);
+                echo "<div class='col-12 col-md-3 text-center bg-dark'>
+              <span class='nick-name text-white'>$na</span><br>
+              <span class='them text-danger'>Редактор</span><br>
+              <img src='$im' alt='' class='rounded-circle avatar-img' style='width:100%'>
+              <ul class='text-left'>
+                  <li class='text-warning'>12 <span class='text-white'>Сообщений</span></li>
+                  <li class='text-warning'>43 <span class='text-white'>Симпатий</span></li>
+                  <li class='text-warning'>1 <span class='text-white'>Год с нами</span></li>
               </ul>
-              <div class="soc-icon">
-                  <a href="#" class="btn btn-lg"><i class="fab fa-skype"></i></a>
-                  <a href="#" class="btn btn-lg"><i class="fab fa-vk"></i></a>
-                  <a href="#" class="btn btn-lg"><i class="fab fa-telegram"></i></a>
+              <div class='soc-icon'>
+                  <a href='#' class='btn btn-lg'><i class='fab fa-skype'></i></a>
+                  <a href='#' class='btn btn-lg'><i class='fab fa-vk'></i></a>
+                  <a href='#' class='btn btn-lg'><i class='fab fa-telegram'></i></a>
               </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-9 bg-dark">
-              <span class="text-white min-h">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolores consequatur, rem, assumenda dolore alias aliquam itaque beatae reprehenderit accusantium officia accusamus. Quae architecto corrupti cumque, sit! A necessitatibus, recusandae repudiandae fugit maxime, ea ab, modi, culpa error atque quasi.
+          <div class='col-12 col-sm-12 col-md-9 bg-dark'>
+              <span class='text-white min-h'>
+                  $text
               </span><br>
-              <div class="alert" role="alert">
-                  <a href="#" class="btn">№1</a>&nbsp;<span class="text-secondary btn">24 июнь 2017</span>
-                  <a href="#" class="btn">Пожаловатся</a>
-                  <a href="#" class="btn fr">Ник в ответ</a>
-                  <a href="#" class="btn fr">Ответить</a>
+              <div class='alert' role='alert'>
+                  <a href='#' class='btn'>№1</a>&nbsp;<span class='text-secondary btn'>24 июнь 2017</span>
+                  <a href='#' class='btn'>Пожаловатся</a>
+                  <a href='#' class='btn fr'>Ник в ответ</a>
+                  <a href='#' class='btn fr'>Ответить</a>
                 </div>
                 <hr>
-          </div>
+          </div>";
+            }
+          
+          ?>
+          
+          
           <?php
           if($_COOKIE[id] != ""){
             echo "<div class='media bg-dark col-12 col-sm-12 col-md-12'>
