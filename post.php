@@ -81,7 +81,8 @@ views_p($db, $query[views], $_GET[id]);
                 <img src="img/content.gif" width="200" alt="">
               </details>-->
               <br>
-               <div class="text-white"><?php echo parse_bb_code($query[msg]);?></div>
+               <div class="text-white" id="sel-text"><?php echo parse_bb_code($query[msg]);?></div>
+               <div id="popUpBox">Цитировать</div>
                 <br>
               <div class="alert" role="alert">
                   <a class='btn btn-dark' href="editor_post.php?id=<?php echo $_GET[id];?>">Редактировать</a>

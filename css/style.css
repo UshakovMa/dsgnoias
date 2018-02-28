@@ -47,6 +47,22 @@ label {
     padding: 10px;
 }
 
+#popUpBox {
+    position:absolute; 
+    display:none;  
+    background:#fff;
+    cursor: pointer;
+    border:3px solid #ccc;
+    color: #333;
+    font: bold 14px arial;
+    padding:5px 15px;
+    margin-top: -415px;
+    margin-left: -343px;
+}
+ 
+#popUpBox:hover{
+    background:#ffdb88;
+}
 
 label:before {
 	content: "";
