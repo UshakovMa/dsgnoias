@@ -170,7 +170,7 @@ function parse_bb_code($text)	{
 	$text = preg_replace('/\[\/code\]/', '</code></pre>', $text);
 	
 	$text = preg_replace('/\[(\/?)quote\]/', "<$1blockquote>", $text);
-	$text = preg_replace('/\[(\/?)quote(\s*=\s*([\'"]?)([^\'"]+)\3\s*)?\]/', "<$1blockquote>Цитата $4:<br>", $text);
+	$text = preg_replace('/\[(\/?)quote(\s*=\s*([\'"]?)([^\'"]+)\3\s*)?\]/', "<$1blockquote class='text-white border border-secondary p-2 rounded'>Цитата $4:<br>"."<i class='fas fa-angle-double-left fr text-muted font-weight-bold' style='font-size: 3em; margin-top: -25px;'></i>", $text);
 	
 	$text = preg_replace('/\[url\](?:http:\/\/)?([a-z0-9-.]+\.\w{2,4})\[\/url\]/', "<a href=\"http://$1\">$1</a>", $text);
 	$text = preg_replace('/\[url\s?=\s?([\'"]?)(?:http:\/\/)?([a-z0-9-.]+\.\w{2,4})\1\](.*?)\[\/url\]/', "<a href=\"http://$2\">$3</a>", $text);
