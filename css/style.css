@@ -64,6 +64,10 @@ label {
     background:#ffdb88;
 }
 
+.btn{
+    box-shadow: none !important;
+}
+
 label:before {
 	content: "";
 	display: inline-block;

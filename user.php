@@ -5,7 +5,10 @@ if($_GET[id] == null){
     if($_COOKIE[id] == null){
         header("Location: index.php");
     }
+$cm = cout_msg($db, $_COOKIE[id]);
+$la = get_last_answ($db, $_COOKIE[id]);
 $res = info_user($db, $_COOKIE[id]);
+$seting = get_setings($db, $_COOKIE[id]);
 $status = get_status($db,$_COOKIE[id]);
 $ava = get_ava($db, $_COOKIE[id]);
 }else{
@@ -16,7 +19,10 @@ $ava = get_ava($db, $_COOKIE[id]);
     if($res == ""){
        header("Location: user.php"); 
     }
-    $status = get_status($db,$_GET[id]);
+    $cm = cout_msg($db, $_GET[id]);
+    $la = get_last_answ($db, $_GET[id]);
+    $seting = get_setings($db, $_GET[id]);
+    $status = get_status($db, $_GET[id]);
     $ava = get_ava($db, $_GET[id]);
 }
 ?>
@@ -62,8 +68,8 @@ $ava = get_ava($db, $_COOKIE[id]);
                     <div class="row">
                         <div class="col d-flex justify-content-center">
                         <a href="#" class="text-center" style="text-decoration:none;">
-                            <span class="text-warning">0</span><br>
-                            <span>Сообщений</span>
+                            <span class="text-warning"><?php echo $cm["COUNT(1)"]?></span><br>
+                            <span>Ответы</span>
                         </a>
                         </div>
                         <div class="col d-flex justify-content-center">
@@ -90,29 +96,30 @@ $ava = get_ava($db, $_COOKIE[id]);
            </div><br>
            
             <div class="bg-dark col-12 col-md-12" style="border-radius: .3rem;">
-                        <h5 class="text-secondary">Последние ответы</h5>
-                        <div class="d-flex">
-                            <img src="img/avatar.png" class="img-circle mr-3" width="60" height="60" alt="">
-                            <div class="d-block">
-                                <a href="#" class="text-warning">NickName</a>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eius, repudiandae molestiae omnis tempora optio sed impedit itaque molestias quas.</p>
-                                <div class="alert fr" role="alert">
-                              <a href="#" class="btn">Перейти к обсуждению</a>
-                              <span class="text-secondary btn">17.02.2018</span>
+                       <h5 class="text-secondary">Последние ответы</h5><br>
+                       <?php
+                        $a = 0;
+                        while($r = mysqli_fetch_assoc($la)){
+                            $a++;
+                            $txt = parse_bb_code($r[msg]);
+                            $timr = date('d.m.o',$r["date"]);
+                            echo "<div class='d-flex'>
+                            <img src='$ava' class='img-circle mr-3' width='60' height='60' alt=''>
+                            <div class='d-block w-100'>
+                                <a href='#' class='text-warning'>$res[login]</a>
+                                <p class='text-white'>$txt</p>
+                                <div class='alert fr' role='alert'>
+                              <a href='post.php?id=$r[post_id]' class='btn'>Перейти к обсуждению</a>
+                              <span class='text-secondary btn'>$timr</span>
                             </div><hr>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <img src="img/avatar.png" class="img-circle mr-3" width="60" height="60" alt="">
-                            <div class="d-block">
-                                <a href="#" class="text-warning">NickName</a>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eius, repudiandae molestiae omnis tempora optio sed impedit itaque molestias quas.</p>
-                                <div class="alert fr" role="alert">
-                              <a href="#" class="btn">Перейти к обсуждению</a>
-                              <span class="text-secondary btn">17.02.2018</span>
-                            </div><hr>
-                            </div>
-                        </div>
+                        </div>";
+                        }
+                        if($a == 0){
+                            echo "<h3 class='text-center text-muted'>У вас пока что нет ответов</h3><br>";
+                        }
+                ?>
+                        
                     </div>
       </div>
        <?php include "sp_bl/bl_foot.php";?>

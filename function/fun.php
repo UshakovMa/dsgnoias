@@ -159,7 +159,8 @@ function get_all_answ($db, $id){
 }
 
 function send_answ_post($db, $id_post, $auth, $msg){
-    mysqli_query($db, "INSERT INTO `answ` (`post_id`, `author`, `msg`) VALUES ('$id_post', '$auth', '$msg')");
+    $t = time();
+    mysqli_query($db, "INSERT INTO `answ` (`post_id`, `author`, `msg`, `date`) VALUES ('$id_post', '$auth', '$msg', '$t')");
 }
 
 function parse_bb_code($text)	{
@@ -182,4 +183,12 @@ function parse_bb_code($text)	{
 	return $text;
 }
 
+function cout_msg($db, $id){
+    $query = mysqli_query($db, "SELECT COUNT(1) FROM `answ` WHERE `author` = '$id'");
+    return mysqli_fetch_assoc($query);
+}
+
+function get_last_answ($db, $id){
+    return mysqli_query($db, "SELECT * FROM `answ` WHERE `author` = '$id' ORDER BY id DESC LIMIT 0,5");
+}
 ?>
