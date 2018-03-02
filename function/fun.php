@@ -161,6 +161,7 @@ function get_all_answ($db, $id){
 function send_answ_post($db, $id_post, $auth, $msg){
     $t = time();
     mysqli_query($db, "INSERT INTO `answ` (`post_id`, `author`, `msg`, `date`) VALUES ('$id_post', '$auth', '$msg', '$t')");
+    mysqli_query($db, "UPDATE `post` SET `last_update` = '$t' WHERE `id` = $id_post");
 }
 
 function parse_bb_code($text)	{
@@ -190,5 +191,14 @@ function cout_msg($db, $id){
 
 function get_last_answ($db, $id){
     return mysqli_query($db, "SELECT * FROM `answ` WHERE `author` = '$id' ORDER BY id DESC LIMIT 0,5");
+}
+
+function get_last_answ_h($db){
+   return mysqli_query($db, "SELECT * FROM `post` ORDER BY `last_update` DESC LIMIT 0,5"); 
+}
+
+function get_title_post($db, $id){
+    $query = mysqli_query($db, "SELECT `title` FROM `post` WHERE `id` = '$id'");
+    return mysqli_fetch_assoc($query);
 }
 ?>

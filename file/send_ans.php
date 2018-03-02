@@ -8,7 +8,7 @@ if(!empty($_POST)){
         if($_POST[msg] != null || $_POST[msg] != ""){
             $pi = (int)$_POST[post_id];
             $id = (int)$_POST[id];
-            send_answ_post($db, $pi, $id, $_POST[msg];
+            send_answ_post($db, $pi, $id, $_POST[msg]);
             header("Location: ../post.php?id=$pi");
         }
     }

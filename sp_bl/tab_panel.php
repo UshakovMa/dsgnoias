@@ -40,11 +40,16 @@
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-dark"><a href="#">Название текста</a><a href="#" class="post-name">@Lendry</a><span>10 мин. назад</span></li>
-                  <li class="list-group-item list-group-item-dark"><a href="#">Название текста</a><a href="#" class="post-name">@Lendry</a><span>10 мин. назад</span></li>
-                  <li class="list-group-item list-group-item-dark"><a href="#">Название текста</a><a href="#" class="post-name">@Lendry</a><span>10 мин. назад</span></li>
-                  <li class="list-group-item list-group-item-dark"><a href="#">Название текста</a><a href="#" class="post-name">@Lendry</a><span>10 мин. назад</span></li>
-                  <li class="list-group-item list-group-item-dark"><a href="#">Название текста</a><a href="#" class="post-name">@Lendry</a><span>10 мин. назад</span></li>
+                 
+                 <?php 
+                    $ss = get_last_answ_h($db);
+                    while($rex = mysqli_fetch_assoc($ss)){
+                        $aut = get_name($rex[author],$db);
+                        $tim = date('d.m.o',$rex['last_update']);
+                        echo "<li class='list-group-item list-group-item-dark'><a href='post.php?id=$rex[post_id]'>$rex[title]</a><a href='user.php?id=$rex[author]' class='post-name'>@$aut</a><span>$tim</span></li>";
+                    }
+                    
+                    ?>
                 </ul>
                 </div>
               <div class="tab-pane fade" id="pills-tab2" role="tabpanel" aria-labelledby="pills-tab2-tab">

@@ -10,7 +10,7 @@ views_p($db, $query[views], $_GET[id]);
 <!doctype html>
 <html lang="ru">
   <?php include "sp_bl/head.php";?>
-  <body onload="onload();">
+  <body>
     <?php include "sp_bl/header.php";?>
     <div class="container">
         <?php include "sp_bl/bread.php"?>

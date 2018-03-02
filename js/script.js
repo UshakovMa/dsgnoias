@@ -16,7 +16,6 @@ $(document).ready(function() {
 };
     
     var $txt = '';
-     
     $('#sel-text').bind("mouseup", function(e){
         if (window.getSelection){
             $txt = window.getSelection();
