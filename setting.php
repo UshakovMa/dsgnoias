@@ -68,45 +68,51 @@ if($se[sex] == 1){
                       </div>
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-contact-info" role="tabpanel" aria-labelledby="v-pills-contact-info-tab">
-                  <div class="row">
+                  <form action="file/update_s.php" method="post" id='update_set1'>
+                     <div class="row">
                       <div class="col-sm">
+<!--
                   <div class="input-group mb-3">
                   <p class="d-block w-100">Jabber:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Jabber">
+                  <input name="jabber" type="text" class="form-control bg-dark text-white rounded" placeholder="Jabber">
                 </div>
+-->
                 <div class="input-group mb-3">
                  <p class="d-block w-100">ВКонтакте:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="ВКонтакте"><hr>
+                  <input type="text" name="vk" class="form-control bg-dark text-white rounded" value="https://vk.com/<?php echo $se[vk];?>" placeholder="ВКонтакте"><hr>
                 </div>
                 <div class="input-group mb-3">
                  <p class="d-block w-100">Steam:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Steam"><hr>
+                  <input type="text" name="steam" class="form-control bg-dark text-white rounded" value="https://steamcommunity.com/id/<?php echo $se[steam];?>" placeholder="Steam"><hr>
                 </div>
                 <div class="input-group mb-3">
                  <p class="d-block w-100">Telegram:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Telegram"><hr>
+                  <input type="text" name="telegram" class="form-control bg-dark text-white rounded" value="https://t.me/<?php echo $se[telegram];?>" placeholder="Telegram"><hr>
                 </div>
                     </div>
                     <div class="col-sm">
                 <div class="input-group mb-3">
                  <p class="d-block w-100">Skype:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Skype"><hr>
+                  <input type="text" name="skype" class="form-control bg-dark text-white rounded" value="<?php echo $se[skype];?>" placeholder="Skype"><hr>
                 </div>
+<!--
                 <div class="input-group mb-3">
                  <p class="d-block w-100">WMID:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="WMID"><hr>
+                  <input type="text" name="wmid" class="form-control bg-dark text-white rounded" placeholder="WMID"><hr>
                 </div>
                 <div class="input-group mb-3">
                  <p class="d-block w-100">ICQ:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="ICQ"><hr>
+                  <input name="isq" type="text" class="form-control bg-dark text-white rounded" placeholder="ICQ"><hr>
                 </div>
+-->
                 <div class="input-group mb-3">
                  <p class="d-block w-100">Twitter:</p>
-                  <input type="text" class="form-control bg-dark text-white rounded" placeholder="Twitter"><hr>
+                  <input name="twitter" type="text" class="form-control bg-dark text-white rounded" value="https://twitter.com/<?php echo $se[twitter];?>" placeholder="Twitter"><hr>
                 </div>
                     </div>
                         </div>
-                <button class="btn btn-outline-success fr">Сохранить изменения</button>
+                        <button type="submit" class="btn btn-outline-success fr">Сохранить изменения</button>
+                        </form>
                   </div>
                   <div class="tab-pane fade text-white" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                       <span>Язык:</span>

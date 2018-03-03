@@ -201,4 +201,8 @@ function get_title_post($db, $id){
     $query = mysqli_query($db, "SELECT `title` FROM `post` WHERE `id` = '$id'");
     return mysqli_fetch_assoc($query);
 }
+
+function set_social_net($db, $id, $vk, $skype, $telegram, $steam, $twitter){
+    mysqli_query($db, "UPDATE `settings` SET `vk` = '$vk', `telegram` = '$telegram', `steam` = '$steam', `skype` = '$skype', `twitter` = '$twitter' WHERE `settings`.`id` = 1;");
+}
 ?>

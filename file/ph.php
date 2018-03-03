@@ -1,6 +1,8 @@
 <?php
 include "../db/conn.php";
 include "../function/fun.php";
+include "../check_acc/check.php";
+
 // Пути загрузки файлов
 $path = '../img_user/';
 $tmp_path = '../tmp/';

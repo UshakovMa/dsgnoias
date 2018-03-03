@@ -33,11 +33,11 @@ $query = get_post_id($db,$_GET[id]);
                     <button class='btn btn-dark' id='image_b'><i class='fas fa-image'></i></button>
                     </h5>
                        <form action='file/upd_text.php' method='post'>
-    <textarea name='msg' id='edit_text' cols='30' rows='10' class='editor' onchange='update_block();'>$query[msg]</textarea><br>
-    <input type='hidden' name='id' value='$_COOKIE[id]'>
-    <input type='hidden' name='post_id' value='$_GET[id]'>
-    <input type='submit' class='btn btn-outline-success fr' style='margin-bottom: 15px;'>
-</form>
+                        <textarea name='msg' id='edit_text' cols='30' rows='10' class='editor' onchange='update_block();'>$query[msg]</textarea><br>
+                        <input type='hidden' name='id' value='$_COOKIE[id]'>
+                        <input type='hidden' name='post_id' value='$_GET[id]'>
+                        <input type='submit' class='btn btn-outline-success fr' style='margin-bottom: 15px;'>
+                    </form>
                 </div>
                 </div>";
           }

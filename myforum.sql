@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 02 2018 г., 15:57
+-- Время создания: Мар 03 2018 г., 18:01
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -184,16 +184,21 @@ CREATE TABLE `settings` (
   `avatar` text NOT NULL,
   `name` varchar(20) NOT NULL,
   `prof` text NOT NULL,
-  `city` varchar(21) NOT NULL
+  `city` varchar(21) NOT NULL,
+  `vk` text NOT NULL,
+  `telegram` text NOT NULL,
+  `steam` text NOT NULL,
+  `skype` text NOT NULL,
+  `twitter` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `settings`
 --
 
-INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`, `name`, `prof`, `city`) VALUES
-(1, 'sadasddsgasdsafasgsdgsdgb', 1, '../img_user/1519660339_1.jpg', 'Максим', 'Поиск уязвимостей', 'ЛНР'),
-(11, '', 0, '../img_user/1519288380_11.jpg', '', '', '');
+INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`, `name`, `prof`, `city`, `vk`, `telegram`, `steam`, `skype`, `twitter`) VALUES
+(1, 'sadasddsgasdsafasgsdgsdgb', 1, '../img_user/1519660339_1.jpg', 'Максим', 'Поиск уязвимостей', 'ЛНР', 'its_my_s', 'its_my_s', 'GgGhost', 'm2000maks', 'ddps'),
+(11, '', 0, '../img_user/1519288380_11.jpg', '', '', '', '', '', '', '', '0');
 
 -- --------------------------------------------------------
 
@@ -243,7 +248,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `verificate`, `comand`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1519982043, 0, 1, 1),
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1520089280, 0, 1, 1),
 (11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 0, 1519211074, 1, 0, 1519288460, 0, 0, 0);
 
 --

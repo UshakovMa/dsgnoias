@@ -42,7 +42,7 @@ if($_GET[theme] == null && $_GET[category] == null){
             </div>
         </div>
     </div><br>
-        <div class="alert bg-dark list-str" role="alert">
+    <div class="alert bg-dark list-str" role="alert">
   <a href="#" class="btn">Подписатся на тему</a>
   <nav style="float: right">
   <ul class="pagination ">
@@ -104,72 +104,6 @@ if($_GET[theme] == null && $_GET[category] == null){
             
        
        ?>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li><br>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li>
-      <li class="list-group-item list-group-item-dark">
-      <div class="open-cat-them fl">
-          <a href="#">[Актуально] Слив хайдов с различных форумов.</a><br>
-      <a href="#" class="open-cat-name text-danger">Lendry,</a>&nbsp;<a href="#">11 мар 2013,</a><span class="text-secondary">&nbsp;3 296 ответов</span>
-      </div>
-      <div class="open-cat-user fr">
-       <img src="img/avatar.png" class="rounded-circle" width="50" alt="">
-        <a class="text-danger" href="#">LendryHD</a>
-        <span class="text-secondary">| Сегодня, в 6:00</span>
-      </div>
-      </li>
     </ul>
     </div><br>
     <?php include "sp_bl/bl_foot.php";?>
