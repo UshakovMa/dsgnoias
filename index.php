@@ -11,7 +11,7 @@
   <br>
    <div class="container">
            <?php include "sp_bl/tab_panel.php";?>
-            <div class="row no-gutters justify-content-around">
+            <div class="row no-gutters justify-content-between">
               <div class="col-12 col-sm-12 col-md-8">
                     <div class="reklama">
                         <img src="img/svob.gif" class="rounded mx-auto d-block" alt="...">

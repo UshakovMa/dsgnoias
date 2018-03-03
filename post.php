@@ -114,7 +114,7 @@ views_p($db, $query[views], $_GET[id]);
               </div>
           </div>
           <div class='col-12 col-sm-12 col-md-9 bg-dark'>
-              <span class='text-white min-h'>
+              <span class='text-white min-h w-100'>
                   $text
               </span><br>
               <div class='alert' role='alert'>
