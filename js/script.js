@@ -123,7 +123,9 @@ $(document).ready(function() {
         return !val;
       })
   });
-    $('.collapse').collapse('hide');    
+    $('.collapse').collapse('hide');  
+    
+    
 });
 
  
