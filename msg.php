@@ -57,6 +57,8 @@
                           </div>
                           <div class="message-body text-white">
                             <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
                           </div>
                         </div>
 
@@ -67,6 +69,8 @@
                             </div>
                             <div class="message-body1 text-white">
                               <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
                             </div>
                         </div>
                     </div>
