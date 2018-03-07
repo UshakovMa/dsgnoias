@@ -73,9 +73,57 @@
                             <span class="text-muted fl">10 мин назад</span>
                             </div>
                         </div>
+                        
+                        <div class="message">
+                          <div class="arrow">
+                            <div class="outer"></div>
+                            <div class="inner"></div>
+                          </div>
+                          <div class="message-body text-white">
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
+                          </div>
+                        </div>
+                        
+                                                <div class="message1">
+                            <div class="arrow1">
+                              <div class="outer1"></div>
+                              <div class="inner1"></div>
+                            </div>
+                            <div class="message-body1 text-white">
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
+                            </div>
+                        </div>
+                                                <div class="message1">
+                            <div class="arrow1">
+                              <div class="outer1"></div>
+                              <div class="inner1"></div>
+                            </div>
+                            <div class="message-body1 text-white">
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
+                            </div>
+                        </div>
+                                                <div class="message1">
+                            <div class="arrow1">
+                              <div class="outer1"></div>
+                              <div class="inner1"></div>
+                            </div>
+                            <div class="message-body1 text-white">
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class="text-secondary fr">Прочитано</span>
+                            <span class="text-muted fl">10 мин назад</span>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="chat-bottom border-0">
                         <div class='chat-input'>
+                           <form action="file/send_msg" method="post"></form>
                             <textarea rows='1' placeholder='Напишите сообщение...'></textarea>
                             <div class='submit-icon'><i class="far fa-paper-plane"></i></div>
                           </div>

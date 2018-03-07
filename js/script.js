@@ -1,5 +1,7 @@
 $(document).ready(function() {
-        
+    
+    $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+    
     function not (text, tip){
        new Noty({
            theme: 'metroui',
