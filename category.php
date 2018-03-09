@@ -11,9 +11,10 @@ if($_GET[theme] != null && $_GET[category] != null){
     $query = get_post_1($db,$th,$cat);
 }
 if($_GET[theme] == null && $_GET[category] == null){
-    $query = get_all_post($db);
-                                                    
+    $query = get_all_post($db);                   
 }
+$nums_row = $query->num_rows;
+$nums_row = 100;
 ?>
 <!doctype html>
 <html lang="ru">
@@ -42,45 +43,35 @@ if($_GET[theme] == null && $_GET[category] == null){
             </div>
         </div>
     </div><br>
-    <div class="alert bg-dark list-str" role="alert">
+    <div class="alert bg-dark list-str" style="height: 125px;" role="alert">
   <a href="#" class="btn">Подписатся на тему</a>
-  <nav style="float: right">
-  <ul class="pagination ">
-    <li class="page-item">
-      <a class="page-link bg-dark text-white" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
+  <a href="" class="btn btn-outline-success fr">Создать тему</a>
+<br>
+<br>
+<?php
+    echo $nums_row / 25;
+    if ($nums_row / 25 > 1){
+echo "<nav style='float: right'>
+  <ul class='pagination '>
+    <li class='page-item'>
+      <a class='page-link bg-dark text-white' href='#' aria-label='Previous'>
+        <span aria-hidden='true'>&laquo;</span>
+        <span class='sr-only'>Previous</span>
       </a>
-    </li>
-    <li class="page-item"><a class="page-link bg-dark text-white" href="#">1</a></li>
-    <li class="page-item"><a class="page-link bg-dark text-white" href="#">2</a></li>
-    <li class="page-item"><a class="page-link bg-dark text-white" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link bg-dark text-white" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
+    </li>";
+        for($i = 0; $i < $nums_row / 25; $i++ ){
+            echo "<li class='page-item'><a class='page-link bg-dark text-white' href=''>$i</a></li>";
+        }
+        
+    echo "<li class='page-item'>
+      <a class='page-link bg-dark text-white' href='#' aria-label='Next'>
+        <span aria-hidden='true'>&raquo;</span>
+        <span class='sr-only'>Next</span>
       </a>
     </li>
   </ul>
-</nav><br>
-
-<select id="select1" class="bg-dark text-white">
-        <option value="">По последниму ответу</option>
-          <option value="">По дате создания тему</option>
-          <option value="">По названию темы</option>
-          <option value="">По количеству ответов</option>
-          <option value="">По количеству просмотров</option>
-      </select>
-      <select id="select2" class="bg-dark text-white">
-        <option value="">По убыванию</option>
-          <option value="">По возрастанию</option>
-      </select>
-      <select id="select3" class="bg-dark text-white">
-        <option value="">(Учитывать все)</option>
-          <option value="">Авторская статья</option>
-      </select>
-      <button type="button" class="btn btn-secondary rounded-0">Применить</button>
-      <button type="button" class="btn btn-outline-success">Создать тему</button>
+</nav>";}
+            ?>
 </div><br>
    <ul class="list-group">
         <?php 
