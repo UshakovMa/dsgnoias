@@ -89,18 +89,18 @@ function last_online($db,$id){
     mysqli_query($db, "UPDATE `users` SET `last_online` = '$tm' WHERE `id` = '$id'");
 }
 
-function get_post($db, $theme){
-    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme'");
+function get_post($db, $theme, $l){
+    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme' LIMIT $l,25");
     return $query;
 }
 
-function get_post_1($db, $theme, $cat){
-    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme' && `cat_id` = '$cat'");
+function get_post_1($db, $theme, $cat, $l){
+    $query = mysqli_query($db, "SELECT * FROM `post` WHERE `theme_id` = '$theme' && `cat_id` = '$cat' LIMIT $l,25");
     return $query;
 }
 
 function get_all_post($db){
-    $query = mysqli_query($db, "SELECT * FROM `post`");
+    $query = mysqli_query($db, "SELECT * FROM `post` LIMIT $l,25");
     return $query;
 }
 

@@ -1,20 +1,31 @@
 <?php
 include "db/conn.php";
 include "check_acc/check.php";
+
+$p_ = 0;
+
+if($_GET[p] == 1){
+    $p_ = ($_GET[p]- 1) * 25;
+}else if($_GET[p] == 0 || $_GET[p] == null){
+    $p_ = $_GET[p] * 25;
+}
+else{
+    $p_ = ($_GET[p]- 1) * 25;
+}
+
 if($_GET[theme] != null && $_GET[category] == null){
     $th = (int)$_GET[theme];
-    $query = get_post($db,$th);
+    $query = get_post($db,$th,$p_);
 }
 if($_GET[theme] != null && $_GET[category] != null){
     $th = (int)$_GET[theme];
     $cat = (int)$_GET[category];
-    $query = get_post_1($db,$th,$cat);
+    $query = get_post_1($db,$th,$cat,$p_);
 }
 if($_GET[theme] == null && $_GET[category] == null){
-    $query = get_all_post($db);                   
+    $query = get_all_post($db,$p_);                   
 }
 $nums_row = $query->num_rows;
-$nums_row = 100;
 ?>
 <!doctype html>
 <html lang="ru">
@@ -49,7 +60,6 @@ $nums_row = 100;
 <br>
 <br>
 <?php
-    echo $nums_row / 25;
     if ($nums_row / 25 > 1){
 echo "<nav style='float: right'>
   <ul class='pagination '>
@@ -60,9 +70,9 @@ echo "<nav style='float: right'>
       </a>
     </li>";
         for($i = 0; $i < $nums_row / 25; $i++ ){
-            echo "<li class='page-item'><a class='page-link bg-dark text-white' href=''>$i</a></li>";
+            $p = $i + 1;
+            echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php&p=$p'>$p</a></li>";
         }
-        
     echo "<li class='page-item'>
       <a class='page-link bg-dark text-white' href='#' aria-label='Next'>
         <span aria-hidden='true'>&raquo;</span>
