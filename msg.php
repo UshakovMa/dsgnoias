@@ -125,7 +125,7 @@
                         <div class='chat-input'>
                            <form action="file/send_msg" method="post"></form>
                             <textarea rows='1' placeholder='Напишите сообщение...'></textarea>
-                            <div class='submit-icon'><i class="far fa-paper-plane"></i></div>
+                            <button type="submit" class='submit-icon'><i class="far fa-paper-plane"></i></button>
                           </div>
                     </div>
                </div>
