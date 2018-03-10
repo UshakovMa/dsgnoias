@@ -87,12 +87,18 @@ echo "<nav style='float: right'>
         <?php 
     if($query != null){
             while($rs = mysqli_fetch_assoc($query)){
+                $answ = cout_answ($db, $rs[id]);
+                $answ = $answ['COUNT(1)'];
+                $last_user = last_user_answ($db, $rs[id]);
                 $time = date('d.m.y, в H:i',$rs['date_create']);
                 $aut = get_name($rs[author],$db);
+                $last_user = mysqli_fetch_assoc($last_user);
+                $last_aut = get_name($last_user[author], $db);
+                $time_l = date('d.m.y, в H:i',$last_user['date']);
                 echo "<li class='list-group-item list-group-item-dark'>
       <div class='open-cat-them fl'>
           <a href='/post.php?id=$rs[id]'>$rs[title]</a><br>
-      <a href='#' class='open-cat-name text-danger'>Lendry,</a>&nbsp;<a href='#'>11 мар 2013,</a><span class='text-secondary'>&nbsp;3 296 ответов</span>
+      <a href='user.php?id=$last_user[author]' class='open-cat-name text-danger'>$last_aut,</a>&nbsp;$time_l,<span class='text-secondary'>&nbsp;$answ ответов</span>
       </div>
       <div class='open-cat-user fr'>
        <img src='img/avatar.png' class='rounded-circle' width='50' alt=''>
@@ -102,8 +108,6 @@ echo "<nav style='float: right'>
       </li>";
             }
     }
-            
-       
        ?>
     </ul>
     </div><br>

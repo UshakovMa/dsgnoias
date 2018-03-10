@@ -205,4 +205,13 @@ function get_title_post($db, $id){
 function set_social_net($db, $id, $vk, $skype, $telegram, $steam, $twitter){
     mysqli_query($db, "UPDATE `settings` SET `vk` = '$vk', `telegram` = '$telegram', `steam` = '$steam', `skype` = '$skype', `twitter` = '$twitter' WHERE `settings`.`id` = 1;");
 }
+
+function cout_answ($db,$id){
+    $query = mysqli_query($db, "SELECT COUNT(1) FROM `answ` WHERE `post_id` = '$id'");
+    return mysqli_fetch_assoc($query);
+}
+
+function last_user_answ($db, $id){
+    return mysqli_query($db, "SELECT `date`,`author` FROM `answ` WHERE `post_id` = '$id' ORDER BY id DESC LIMIT 1"); 
+}
 ?>
