@@ -3,27 +3,33 @@ include "db/conn.php";
 include "check_acc/check.php";
 
 $p_ = 0;
-
+$p_all = 0;
 if($_GET[p] == 1){
     $p_ = ($_GET[p]- 1) * 25;
+    $p_all = 1;
 }else if($_GET[p] == 0 || $_GET[p] == null){
     $p_ = $_GET[p] * 25;
+    $p_all = 1;
 }
 else{
     $p_ = ($_GET[p]- 1) * 25;
+    $p_all = $_GET[p];
 }
 
 if($_GET[theme] != null && $_GET[category] == null){
     $th = (int)$_GET[theme];
+    $url = "?theme=".$_GET[theme];
     $query = get_post($db,$th,$p_);
 }
 if($_GET[theme] != null && $_GET[category] != null){
     $th = (int)$_GET[theme];
     $cat = (int)$_GET[category];
+    $url = "?theme=".$_GET[theme]."category=".$_GET[category];
     $query = get_post_1($db,$th,$cat,$p_);
 }
 if($_GET[theme] == null && $_GET[category] == null){
-    $query = get_all_post($db,$p_);                   
+    $query = get_all_post($db,$p_);
+    $url = "?";
 }
 $nums_row = $query->num_rows;
 ?>
@@ -60,7 +66,7 @@ $nums_row = $query->num_rows;
 <br>
 <br>
 <?php
-    if ($nums_row / 25 > 1){
+    if ($nums_row / 25 > 5){
 echo "<nav style='float: right'>
   <ul class='pagination '>
     <li class='page-item'>
@@ -69,10 +75,22 @@ echo "<nav style='float: right'>
         <span class='sr-only'>Previous</span>
       </a>
     </li>";
-        for($i = 0; $i < $nums_row / 25; $i++ ){
-            $p = $i + 1;
-            echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php&p=$p'>$p</a></li>";
-        }
+        $last_pag = $nums_row / 25;
+        $last_pag = floor($last_pag);
+        echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php$url&p=1'>1</a></li>";
+        echo "<li class='page-item'><div class='page-link bg-dark text-white'>...</div></li>";
+        $tek = $p_all;
+        $one = (int)$p_all - 1;
+        $three = (int)$p_all + 1;
+        echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php$url&p=$one'>$one</a></li>";
+        if($last_pag != $tek){
+        echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php$url&p=$tek'>$tek</a></li>";
+        echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php$url&p=$three'>$three</a></li>";
+        echo "<li class='page-item'><div class='page-link bg-dark text-white'>...</div></li>";}
+        echo "<li class='page-item'><a class='page-link bg-dark text-white' href='category.php$url&p=$last_pag'>$last_pag</a></li>";
+
+        
+        
     echo "<li class='page-item'>
       <a class='page-link bg-dark text-white' href='#' aria-label='Next'>
         <span aria-hidden='true'>&raquo;</span>

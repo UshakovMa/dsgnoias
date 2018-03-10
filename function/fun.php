@@ -99,7 +99,7 @@ function get_post_1($db, $theme, $cat, $l){
     return $query;
 }
 
-function get_all_post($db){
+function get_all_post($db,$l){
     $query = mysqli_query($db, "SELECT * FROM `post` LIMIT $l,25");
     return $query;
 }
@@ -194,7 +194,7 @@ function get_last_answ($db, $id){
 }
 
 function get_last_answ_h($db){
-   return mysqli_query($db, "SELECT * FROM `post` ORDER BY `last_update` DESC LIMIT 0,5"); 
+   return mysqli_query($db, "SELECT `id`,`title`,`author`,`last_update` FROM `post` ORDER BY `last_update` DESC LIMIT 0,5"); 
 }
 
 function get_title_post($db, $id){
