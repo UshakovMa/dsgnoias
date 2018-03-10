@@ -20,22 +20,7 @@
   <li class="nav-item">
     <a class="nav-link" id="pills-tab7-tab" data-toggle="pill" href="#pills-tab7" role="tab" aria-controls="pills-tab7" aria-selected="false">Актуальные читы</a>
   </li>
-  <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item bg-dark" href="#">Мои темы</a>
-          <a class="dropdown-item bg-dark" href="#">Розыгрыши</a>
-        </div>
       </li>
-  <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item bg-dark" href="#">25 записей</a>
-          <a class="dropdown-item bg-dark" href="#">100 записей</a>
-          <a class="dropdown-item bg-dark" href="#">200 записей</a>
-        </div>
-      </li>
-    <a class="btn" href="#"><i class="fas fa-sync-alt"></i></a>
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
