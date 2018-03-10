@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    
-    $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
+    console.log("sadf");
     
     function not (text, tip){
        new Noty({
@@ -57,6 +56,8 @@ $(document).ready(function() {
     });
     
     $("#password").pwdMeter();
+    
+    
  	    $('#avtorization-form').submit(function(e) {
         var $form = $(this);
         $.ajax({
@@ -97,6 +98,7 @@ $(document).ready(function() {
         e.preventDefault(); 
       });
     
+    
     $('#avtorization-form1').submit(function(e) {
         var $form = $(this);
         $.ajax({
@@ -128,6 +130,27 @@ $(document).ready(function() {
     $('.collapse').collapse('hide');  
     
     
+    $('form').submit(function(e) {
+        var $form = $(this);
+        $.ajax({
+          type: $form.attr('method'),
+          url: $form.attr('action'),
+          data: $form.serialize(),
+            success: function(response) { //Данные отправлены успешно
+                 var arr = response.split('@');
+                not (arr[1], arr[0]);
+                if(arr[0] == "Авторизированы"){
+                    location.reload();
+                }
+    	}
+        });
+            setTimeout(function(){$('#res').fadeOut('slow')},5000);
+            setTimeout(function(){$('#res').empty()},5000);
+            setTimeout(function(){$('#res').fadeIn('slow')},5000);
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault(); 
+      });
+        $(".chat-body").scrollTop($(".chat-body")[0].scrollHeight);
 });
 
  

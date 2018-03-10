@@ -31,7 +31,8 @@
                 <?php 
                       $se = get_setings($db, $_COOKIE[id]);
                       ?>
-                <form action="file/user_inf.php" class="col-sm" method="post" id="avtorization-form">
+                      
+                <form action="file/user_inf.php" class="col-sm" method="post">
                 <div class="input-group mb-3">
                     <p>Статус:</p>
                   <input type="text" name="status" class="form-control bg-dark text-white w-100" placeholder="Статус" value="<?php echo $se[status];

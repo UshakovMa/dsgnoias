@@ -20,7 +20,6 @@
   <li class="nav-item">
     <a class="nav-link" id="pills-tab7-tab" data-toggle="pill" href="#pills-tab7" role="tab" aria-controls="pills-tab7" aria-selected="false">Актуальные читы</a>
   </li>
-      </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
