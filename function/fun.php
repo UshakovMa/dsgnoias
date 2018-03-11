@@ -214,4 +214,10 @@ function cout_answ($db,$id){
 function last_user_answ($db, $id){
     return mysqli_query($db, "SELECT `date`,`author` FROM `answ` WHERE `post_id` = '$id' ORDER BY id DESC LIMIT 1"); 
 }
+
+function get_online($db, $id){
+    $q = mysqli_query($db, "SELECT `last_online` FROM `users` WHERE `id` = '$id'");
+    $q = mysqli_fetch_assoc($q);
+    return $q[last_online];
+}
 ?>

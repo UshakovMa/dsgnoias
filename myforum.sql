@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 03 2018 г., 18:01
+-- Время создания: Мар 11 2018 г., 08:03
 -- Версия сервера: 5.6.38
 -- Версия PHP: 5.6.32
 
@@ -53,7 +53,8 @@ INSERT INTO `answ` (`id`, `post_id`, `author`, `msg`, `date`) VALUES
 (10, 1, 1, 'ьаврощиш\r\n', 1519981246),
 (11, 2, 1, 'jbsdvuikj sdih vs', 1519981783),
 (12, 2, 1, 'kjdhsvln ikgh jdfkgb dfh bdficb df j', 1519981972),
-(13, 1, 1, 'nbaskjv isdfvui ', 1519981982);
+(13, 1, 1, 'nbaskjv isdfvui ', 1519981982),
+(14, 1, 1, 'kxnsavklnaskl', 1520642544);
 
 -- --------------------------------------------------------
 
@@ -87,6 +88,25 @@ INSERT INTO `category` (`id`, `name`, `id_theme`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `dialog`
+--
+
+CREATE TABLE `dialog` (
+  `id` int(11) NOT NULL,
+  `from_user` int(11) NOT NULL,
+  `to_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `dialog`
+--
+
+INSERT INTO `dialog` (`id`, `from_user`, `to_user`) VALUES
+(1, 11, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `light`
 --
 
@@ -103,12 +123,20 @@ CREATE TABLE `light` (
 --
 
 CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
   `msg` text NOT NULL,
   `from_user` int(11) NOT NULL,
   `to_user` int(11) NOT NULL,
   `unread` tinyint(1) NOT NULL,
-  `date` date NOT NULL
+  `date` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `msg`, `from_user`, `to_user`, `unread`, `date`) VALUES
+(3, 'Иди нахуй', 11, 1, 0, 125125231);
 
 -- --------------------------------------------------------
 
@@ -148,8 +176,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `title`, `msg`, `author`, `theme_id`, `cat_id`, `views`, `close`, `date_create`, `last_update`) VALUES
-(1, 'Иди на хуй Костя', '[i]dbgjasgfkasbgfkLorem ipsum dolor sit amet, consectetur[/i] ri labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!', 1, 1, 2, 268, 0, 1519092754, 1519981982),
-(2, 'Пидорасы все сюда!!!', 'ьтывиропмичсл оьт оичст валопшависомичсмрт шлваомтлоывр мтывл мршлывоч м ывшло млоывломывло милоывт пмлывб оптвалоспи ровачс варомывлдпр вы.п ваочлиоварлмиаловт мидваилдва тилвт ис мьмоваоп  аловоп увалорп алп дват лвап ватп алвпт валосвослми в', 11, 2, 11, 5, 0, 1519981743, 1519981972);
+(1, 'Иди на хуй Костя', '[i]dbgjasgfkasbgfkLorem ipsum dolor sit amet, consectetur[/i] ri labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ab, inventore rem in ex ut expedita dolorem recusandae natus aliquam? Aspernatur unde placeat, tempora exercitationem maxime aperiam dolor nobis in iure facere minima, repellendus doloremque sed, atque perspiciatis a voluptates, optio aliquam aliquid repellat? Sequi delectus illum tenetur corrupti repellendus cupiditate! Aliquid quae, sequi quos, tempora magnam consequatur ab deserunt aperiam incidunt temporibus quisquam voluptate corporis sunt autem nihil, assumenda excepturi labore. Placeat qui facilis et vitae voluptate commodi tenetur nisi libero cupiditate expedita hic labore ratione ipsa numquam natus nostrum, sit ad. Earum culpa impedit blanditiis, nemo voluptatem enim dicta, dolores qui a quaerat quia debitis voluptatum labore odit, ut! Odit iusto ducimus impedit! Tenetur officiis, culpa at reiciendis deserunt nemo maiores, alias tempora quidem, mollitia impedit fuga eum odio cum vero magni ab saepe recusandae incidunt. Assumenda, illum, aut. Odit corrupti nisi perferendis, sapiente eveniet illo inventore. Qui omnis odit veniam asperiores eaque ipsam voluptatum, vitae totam, quam expedita veritatis aspernatur ad sed eveniet, corporis aperiam rerum, dolorem pariatur natus officiis maxime. Optio voluptas vero, aliquam repellendus atque incidunt excepturi amet debitis, aperiam ullam maxime cupiditate suscipit. Enim culpa quo minus libero! Officia cumque sequi est, optio eum!', 1, 1, 2, 296, 0, 1519092754, 1520642544),
+(2, 'Пидорасы все сюда!!!', 'ьтывиропмичсл оьт оичст валопшависомичсмрт шлваомтлоывр мтывл мршлывоч м ывшло млоывломывло милоывт пмлывб оптвалоспи ровачс варомывлдпр вы.п ваочлиоварлмиаловт мидваилдва тилвт ис мьмоваоп  аловоп увалорп алп дват лвап ватп алвпт валосвослми в', 11, 2, 11, 6, 0, 1519981743, 1519981972);
 
 -- --------------------------------------------------------
 
@@ -197,7 +225,8 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `status`, `sex`, `avatar`, `name`, `prof`, `city`, `vk`, `telegram`, `steam`, `skype`, `twitter`) VALUES
-(1, 'sadasddsgasdsafasgsdgsdgb', 1, '../img_user/1519660339_1.jpg', 'Максим', 'Поиск уязвимостей', 'ЛНР', 'its_my_s', 'its_my_s', 'GgGhost', 'm2000maks', 'ddps'),
+(0, '', 0, '', '', '', '', '', '', '', '', ''),
+(1, 'Я иду сегодня нахуй', 1, '../img_user/1519660339_1.jpg', 'Максим', 'Поиск уязвимостей', 'ЛНР', 'its_my_s', 'its_my_s', 'GgGhost', 'm2000maks', 'ddps'),
 (11, '', 0, '../img_user/1519288380_11.jpg', '', '', '', '', '', '', '', '0');
 
 -- --------------------------------------------------------
@@ -248,7 +277,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `ip`, `hash_sesion`, `access_level`, `coin_money`, `date`, `active`, `online`, `last_online`, `ban`, `verificate`, `comand`) VALUES
-(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1520089280, 0, 1, 1),
+(1, 'ddps', 'ushakov2014@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '01bd558fd6f99dab6acd440e8d1b0c4c', 1, 200, 1518443550, 1, 0, 1520744615, 0, 1, 1),
 (11, 'ddps2121', 'us@mail.ua', '243fbbdf2608107d6f58bf4773c9982d', '127.0.0.1', '', 1, 0, 1519211074, 1, 0, 1519288460, 0, 0, 0);
 
 --
@@ -268,9 +297,21 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `dialog`
+--
+ALTER TABLE `dialog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `light`
 --
 ALTER TABLE `light`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -314,7 +355,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `answ`
 --
 ALTER TABLE `answ`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `category`
@@ -323,10 +364,22 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT для таблицы `dialog`
+--
+ALTER TABLE `dialog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT для таблицы `light`
 --
 ALTER TABLE `light`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `post`

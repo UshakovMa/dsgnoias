@@ -48,7 +48,7 @@ $ava = get_ava($db, $_COOKIE[id]);
                             if($res['last_online'] > time() - 60*5){
                                 echo "Онлайн";
                             }else{
-                            echo "Был в сети ".date('d.m.o в H:i',$res['last_online'])." мин назад";
+                            echo "Был в сети ".date('d.m.o в H:i',$res['last_online']);
                             }?>
                             </span><br>
                             <small class="text-muted"><?php echo $status; ?></small>
