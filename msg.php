@@ -63,7 +63,10 @@
             <?php
             
             if($_GET[s] == null || $_GET[s] == ''){
-                echo "";
+                echo "<div class='text-white text-center pls-sel-dialog'>
+                    <i class='far fa-envelope text-muted' style='font-size: 5em;'></i>
+                    <h5 class='text-muted'>Пожалуйста, выберите диалог</h5>
+                </div>";
             }else{
                 
                     $user_dialog = get_name((int)$_GET[s], $db);
@@ -98,6 +101,116 @@
                         </div>
 
                         <div class='message1'>
+                            <div class='arrow1'>
+                              <div class='outer1'></div>
+                              <div class='inner1'></div>
+                            </div>
+                            <div class='message-body1 text-white'>
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class='message'>
+                          <div class='arrow'>
+                            <div class='outer'></div>
+                            <div class='inner'></div>
+                          </div>
+                          <div class='message-body text-white'>
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                          </div>
+                        </div><div class='message1'>
+                            <div class='arrow1'>
+                              <div class='outer1'></div>
+                              <div class='inner1'></div>
+                            </div>
+                            <div class='message-body1 text-white'>
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class='message'>
+                          <div class='arrow'>
+                            <div class='outer'></div>
+                            <div class='inner'></div>
+                          </div>
+                          <div class='message-body text-white'>
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                          </div>
+                        </div><div class='message1'>
+                            <div class='arrow1'>
+                              <div class='outer1'></div>
+                              <div class='inner1'></div>
+                            </div>
+                            <div class='message-body1 text-white'>
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class='message'>
+                          <div class='arrow'>
+                            <div class='outer'></div>
+                            <div class='inner'></div>
+                          </div>
+                          <div class='message-body text-white'>
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                          </div>
+                        </div><div class='message1'>
+                            <div class='arrow1'>
+                              <div class='outer1'></div>
+                              <div class='inner1'></div>
+                            </div>
+                            <div class='message-body1 text-white'>
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class='message'>
+                          <div class='arrow'>
+                            <div class='outer'></div>
+                            <div class='inner'></div>
+                          </div>
+                          <div class='message-body text-white'>
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                          </div>
+                        </div><div class='message1'>
+                            <div class='arrow1'>
+                              <div class='outer1'></div>
+                              <div class='inner1'></div>
+                            </div>
+                            <div class='message-body1 text-white'>
+                              <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                              <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                            </div>
+                        </div>
+                        
+                        <div class='message'>
+                          <div class='arrow'>
+                            <div class='outer'></div>
+                            <div class='inner'></div>
+                          </div>
+                          <div class='message-body text-white'>
+                            <p>Hello world! This is a test message to show how to make an arrow on the side of the box.</p>
+                            <span class='text-secondary fr'>Прочитано</span>
+                            <span class='text-muted fl'>10 мин назад</span>
+                          </div>
+                        </div><div class='message1'>
                             <div class='arrow1'>
                               <div class='outer1'></div>
                               <div class='inner1'></div>

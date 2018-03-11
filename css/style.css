@@ -1,5 +1,12 @@
 body{
     background-color: #222;
+    width: 100%;
+    height: 100%;
+}
+
+html{
+    width: 100%;
+    height: 100%;
 }
 
 ::-webkit-scrollbar-button { 
@@ -345,12 +352,12 @@ li{
     margin: 0!important;
 }
 
+
 .chat-body{
     background-image: url(../img/bg-chat.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
-    max-height: 600px;
+    max-height: 68vh;
     padding: 20px;
     overflow: auto;
     border: 3px solid #343A40;
@@ -647,6 +654,14 @@ li{
   border: none;
 }
 
+.pls-sel-dialog{
+    height: 80vh;
+    display: block;
+    position: relative;
+    top: 10%;
+    padding: 15%;
+    left: 10%;
+}
 
 @media all and (max-width: 1200px){
     .edit_avatarka_plus{
@@ -663,6 +678,10 @@ li{
 @media all and (max-width: 991px){
     .edit_avatarka_plus{
         left: 81px;
+    }
+    
+    .pls-sel-dialog{
+        display: none;
     }
 }
 
