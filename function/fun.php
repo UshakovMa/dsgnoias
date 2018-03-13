@@ -220,4 +220,8 @@ function get_online($db, $id){
     $q = mysqli_fetch_assoc($q);
     return $q[last_online];
 }
+
+function send_msg($db, $to_us, $from, $msg){
+    
+}
 ?>

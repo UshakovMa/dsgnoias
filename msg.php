@@ -271,9 +271,11 @@
                     </div>
                     <div class='chat-bottom border-0'>
                         <div class='chat-input'>
-                           <form action='file/send_msg' method='post'></form>
-                            <textarea rows='1' placeholder='Напишите сообщение...'></textarea>
+                           <form action='file/send_msg.php' method='post'>
+                            <textarea rows='1' placeholder='Напишите сообщение...' name='msg' required></textarea>
+                            <input type='hidden' name='to' value='$_GET[s]'>
                             <button type='submit' class='submit-icon'><i class='far fa-paper-plane'></i></button>
+                            </form>
                           </div>
                     </div>
                </div>
