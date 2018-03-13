@@ -222,6 +222,12 @@ function get_online($db, $id){
 }
 
 function send_msg($db, $to_us, $from, $msg){
-    
+    $from = (int)$from;
+    $to_us = (int)$to_us;
+    $time = time();
+    $msg = strip_tags($msg);
+    mysqli_query($db, "INSERT INTO `messages` (`id`, `msg`, `from_user`, `to_user`, `unread`, `date`) VALUES (NULL, '$msg', '$from', '$to_us', '1', '$time')");
 }
+
+
 ?>
